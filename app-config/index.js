@@ -1,6 +1,6 @@
 const path = require('path');
 
-const root = process.env.PROJECT_ROOT_DIR || path.join(__dirname, '..');
+const root = process.env.PROJECT_ROOT_DIR || path.resolve(__dirname, '..');
 
 const getAppConfig = () => ({
   projectName: 'header',
