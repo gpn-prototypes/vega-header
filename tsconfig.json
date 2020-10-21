@@ -7,7 +7,7 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
-      "@vega/*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   }
 }
