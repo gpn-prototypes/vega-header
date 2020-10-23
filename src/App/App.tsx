@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react';
-import { BrowserRouter, Link, useHistory, useLocation } from 'react-router-dom';
+import { BrowserRouter, Link, useHistory } from 'react-router-dom';
 import { Header, NavItemType, Root as VegaRoot, Text } from '@gpn-prototypes/vega-ui';
-
-import './App.css';
 
 interface NavLinkType extends NavItemType {
   url?: string;
@@ -10,26 +8,10 @@ interface NavLinkType extends NavItemType {
 
 const VegaHeader = () => {
   const history = useHistory();
-  const location = useLocation();
 
-  const navItems: NavLinkType[] = [
-    {
-      name: 'Экономика проекта',
-      url: '/fem',
-      isActive: location.pathname.startsWith('/fem'),
-    },
-    {
-      name: 'Логика проекта',
-      url: '/logic',
-      isActive: location.pathname.startsWith('/logic'),
-    },
-  ];
+  const navItems: NavLinkType[] = [];
 
-  const menuItems = [
-    { name: 'Проекты', url: '/projects' },
-    { name: 'Обучение', url: '/' },
-    { name: 'Помощь', url: '/help' },
-  ];
+  const menuItems = [{ name: 'Проекты', url: '/projects' }];
 
   const activeItem = navItems.find((ni) => ni.isActive);
 
@@ -58,7 +40,16 @@ const VegaHeader = () => {
         <Header.Menu.Delimiter />
         <Header.Menu.Item>
           {(menuItemProps): React.ReactNode => (
-            <Link onClick={menuItemProps.closeMenu} className={menuItemProps.className} to="/login">
+            <Link
+              onClick={(e) => {
+                if (menuItemProps.closeMenu) {
+                  localStorage.removeItem('auth-token');
+                  menuItemProps.closeMenu(e);
+                }
+              }}
+              className={menuItemProps.className}
+              to="/login"
+            >
               <Text>Выйти</Text>
             </Link>
           )}
