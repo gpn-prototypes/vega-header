@@ -23,7 +23,7 @@ const VegaHeader = () => {
 
   return (
     <Header>
-      <Header.Menu title="Вега">
+      <Header.Menu title="Тестовый заголовок">
         {menuItems.map((menuItem) => (
           <Header.Menu.Item key={menuItem.name}>
             {(menuItemProps): React.ReactNode => (
