@@ -1,0 +1,24 @@
+name: Добавление описания в Pull Request
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  update_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tzkhan/pr-update-action@v1.1.1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          branch-regex: '(VEGA-\d+)|(dependabot\S+)'
+          title-template: ' '
+          replace-title: false
+          uppercase-title: true
+          body-template: |
+            ## Задача
+            Cсылка в Jira CSSSR на задачу: https://jira.csssr.io/browse/%branch%
+            Ссылка на скрипт http://%branch%.vega-header.csssr.cloud/vega-header.js
+          replace-body: false
+          body-prefix-newline-count: 2
+          uppercase-body: true
