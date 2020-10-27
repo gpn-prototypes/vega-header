@@ -5,6 +5,32 @@ const { getAppConfig } = require('./app-config');
 
 const { projectName } = getAppConfig();
 
+const SHELL_PORT = process.env.PORT || 9000;
+const SHELL_URL = process.env.BASE_URL || `http://localhost:${SHELL_PORT}`;
+
+function withTrailingSlash(path) {
+  if (path.endsWith('/')) {
+    return path;
+  }
+
+  return `${path}/`;
+}
+
+const synonyms = {
+  'apollo-client': '@apollo/client',
+};
+
+const externalPackages = ['@apollo/client'];
+
+const URL = withTrailingSlash(SHELL_URL);
+
+const webpackExternals = Object.fromEntries(
+  externalPackages.map((package) => {
+    const packageName = Object.keys(synonyms).includes(package) ? synonyms[package] : package;
+    return [packageName, `${URL}${package}.js`];
+  }),
+);
+
 module.exports = (webpackConfigEnv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: 'vega',
@@ -12,9 +38,12 @@ module.exports = (webpackConfigEnv) => {
     webpackConfigEnv,
   });
 
-  return webpackMerge.smart(defaultConfig, {
+  console.log(defaultConfig.externals)
+
+  const config = webpackMerge.smart(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
     entry: ['./src/singleSpaEntry.tsx'],
+    externals: [...externalPackages],
     module: {
       rules: [
         {
@@ -52,4 +81,8 @@ module.exports = (webpackConfigEnv) => {
       }),
     ],
   });
+
+  console.log(config.externals);
+
+  return config;
 };
