@@ -73,6 +73,6 @@
     "webpack-config-single-spa-ts": "^1.12.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-import-map-plugin": "^1.0.0-alpha0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^5.2.0"
   }
 }
