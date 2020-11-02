@@ -62,9 +62,6 @@ const VegaHeader = () => {
 };
 
 export const App = (): ReactElement => {
-
-  console.log(React.version)
-  console.log(ReactDOM.version)
   return (
     <BrowserRouter basename="/">
       <VegaRoot defaultTheme="dark">
