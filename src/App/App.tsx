@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter, Link, useHistory } from 'react-router-dom';
 import { Header, NavItemType, Root as VegaRoot, Text } from '@gpn-prototypes/vega-ui';
 
