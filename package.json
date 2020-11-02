@@ -35,8 +35,8 @@
   "dependencies": {
     "@gpn-prototypes/vega-ui": "^2.13.0",
     "bem-cn": "^3.0.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
     "single-spa-react": "^3.1.0"
   },
