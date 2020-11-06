@@ -5,6 +5,8 @@ const { getAppConfig } = require('./app-config');
 
 const { projectName } = getAppConfig();
 
+const externalPackages = ['@gpn-prototypes/vega-ui'];
+
 module.exports = (webpackConfigEnv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: 'vega',
@@ -12,9 +14,10 @@ module.exports = (webpackConfigEnv) => {
     webpackConfigEnv,
   });
 
-  return webpackMerge.smart(defaultConfig, {
+  const config = webpackMerge.smart(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
     entry: ['./src/singleSpaEntry.tsx'],
+    externals: [...externalPackages],
     module: {
       rules: [
         {
@@ -52,4 +55,6 @@ module.exports = (webpackConfigEnv) => {
       }),
     ],
   });
+
+  return config;
 };
