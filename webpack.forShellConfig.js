@@ -3,6 +3,8 @@ const singleSpaDefaults = require('webpack-config-single-spa-react-ts');
 const ImportMapPlugin = require('webpack-import-map-plugin');
 const { getAppConfig } = require('./app-config');
 
+const postCssConfig = { postcssOptions: { ...require('./postcss.config') } };
+
 const { projectName } = getAppConfig();
 
 const externalPackages = ['@gpn-prototypes/vega-ui'];
@@ -21,7 +23,7 @@ module.exports = (webpackConfigEnv) => {
     module: {
       rules: [
         {
-          test: /\.(png|jpe?g|gif)$/i,
+          test: /\.(png|jpe?g|gif|svg)$/i,
           use: [
             {
               loader: 'file-loader',
@@ -33,6 +35,7 @@ module.exports = (webpackConfigEnv) => {
           use: [
             {
               loader: 'postcss-loader',
+              options: { ...postCssConfig },
             },
           ],
         },
