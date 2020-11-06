@@ -20,7 +20,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production --progress --config ./webpack.forShellConfig.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
-    "dev:shell": "cross-env NODE_ENV=development PORT=9000 webpack-dev-server --mode development --port 9001 --config ./webpack.forShellConfig.js",
+    "dev:shell": "cross-env NODE_ENV=development PORT=9001 webpack-dev-server --mode development --port 9001 --config ./webpack.forShellConfig.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "format": "prettier --write '{src,types,scripts}/**/*.{json,{j,t}s{,x},css,}'",
