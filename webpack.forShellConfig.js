@@ -5,7 +5,7 @@ const { getAppConfig } = require('./app-config');
 
 const { projectName } = getAppConfig();
 
-const externalPackages = [];
+const externalPackages = ['@gpn-prototypes/vega-ui'];
 
 module.exports = (webpackConfigEnv) => {
   const defaultConfig = singleSpaDefaults({
