@@ -1773,6 +1773,13 @@
   dependencies:
     "@consta/uikit" "^1.10.4"
 
+"@gpn-prototypes/vega-basic-select@^0.0.2":
+  version "0.0.2"
+  resolved "https://npm.pkg.github.com/download/@gpn-prototypes/vega-basic-select/0.0.2/f717a0e419d648a4f897dd815471ccef8bf5b35263c34dca0054fe8a72fca333#ede22b640ce0c072fd0efe556d812ea33ff35089"
+  integrity sha512-0i2PrVOTZv9c5dKs3oBLiTRQ4MZzkODF5/p33SIt9BhPUgooHc9LB9vBzuYj8VDDu5MmXlpygV7k7CcpsPGecg==
+  dependencies:
+    "@consta/uikit" "^1.10.4"
+
 "@gpn-prototypes/vega-button@^0.2.1", "@gpn-prototypes/vega-button@^0.2.3":
   version "0.2.3"
   resolved "https://npm.pkg.github.com/download/@gpn-prototypes/vega-button/0.2.3/fdaa5d41af0e7c70e91c4cfa3459b83f43813878ab98cfd0d54cd097dd400a6a#b39334a4f8a7e8c31e81acca4e869ad3244c9094"
@@ -2107,15 +2114,16 @@
   dependencies:
     bem-cn "^3.0.1"
 
-"@gpn-prototypes/vega-ui@^2.13.0":
-  version "2.14.5"
-  resolved "https://npm.pkg.github.com/download/@gpn-prototypes/vega-ui/2.14.5/be5cc64b8492f2d60b70a8a18a97978f2d16ebfd33374c91756b4f5be8f16044#c60d11ea4ea368537de7d880c9efe913d9922259"
-  integrity sha512-qp9S35RtbbSKM+ssge+dX8dQHHCtI6/tOGiQP3YOFVxMYkEHlQBWM5NJNhF+Hes/p0/4+mV9W2TzFt8eJnv5NQ==
+"@gpn-prototypes/vega-ui@^2.14.7":
+  version "2.14.7"
+  resolved "https://npm.pkg.github.com/download/@gpn-prototypes/vega-ui/2.14.7/6e812b16fce61e559c2ea6ffa75fa4c5506cb6e0922556491085f53cffc852a3#428a46de1b9d73eca6b95b4d568eed510c2d8dfa"
+  integrity sha512-hG2IMQTW6pXGsVRLN5bo/NYXuweiqj9J8LAyXx4uL8OeMqgJKutdlfjbYs1AOSodW+wEcclaAh3KiRDtw/YYpA==
   dependencies:
     "@gpn-prototypes/vega-animation" "^0.0.3"
     "@gpn-prototypes/vega-attach" "^0.1.6"
     "@gpn-prototypes/vega-avatar" "^0.1.8"
     "@gpn-prototypes/vega-badge" "^0.1.9"
+    "@gpn-prototypes/vega-basic-select" "^0.0.2"
     "@gpn-prototypes/vega-button" "^0.2.3"
     "@gpn-prototypes/vega-canvas" "^0.1.0"
     "@gpn-prototypes/vega-carousel" "^0.0.12"
@@ -11118,9 +11126,9 @@ react-konva@^16.13.0-6:
     scheduler "^0.19.1"
 
 react-popper@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.3.tgz#33d425fa6975d4bd54d9acd64897a89d904b9d97"
-  integrity sha512-mOEiMNT1249js0jJvkrOjyHsGvqcJd3aGW/agkiMoZk3bZ1fXN1wQszIQSjHIai48fE67+zwF8Cs+C4fWqlfjw==
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.4.tgz#d2ad3d2474ac9f1abf93df3099d408e5aa6a2e22"
+  integrity sha512-NacOu4zWupdQjVXq02XpTD3yFPSfg5a7fex0wa3uGKVkFK7UN6LvVxgcb+xYr56UCuWiNPMH20tntdVdJRwYew==
   dependencies:
     react-fast-compare "^3.0.1"
     warning "^4.0.2"

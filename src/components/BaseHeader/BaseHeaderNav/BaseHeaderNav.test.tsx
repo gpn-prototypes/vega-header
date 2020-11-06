@@ -1,14 +1,14 @@
 import React from 'react';
 import { fireEvent, render, RenderResult } from '@testing-library/react';
 
-import { HeaderNav } from './HeaderNav';
+import { BaseHeaderNav } from './BaseHeaderNav';
 
-type HeaderNavTestProps = React.ComponentProps<typeof HeaderNav>;
+type BaseHeaderNavTestProps = React.ComponentProps<typeof BaseHeaderNav>;
 
-const renderComponent = (props: Omit<HeaderNavTestProps, 'children'>): RenderResult =>
-  render(<HeaderNav {...props} />);
+const renderComponent = (props: Omit<BaseHeaderNavTestProps, 'children'>): RenderResult =>
+  render(<BaseHeaderNav {...props} />);
 
-describe('Header', () => {
+describe('BaseHeader', () => {
   const navItems = [
     {
       name: 'Пайплайн',

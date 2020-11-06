@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, RenderResult } from '@testing-library/react';
 
-import { Header } from './Header';
+import { BaseHeader } from './BaseHeader';
 
 const navItems = [
   {
@@ -24,39 +24,39 @@ const menuItems = [
 
 const renderComponent = (): RenderResult =>
   render(
-    <Header>
-      <Header.Menu title="Очень-очень длинное название прое...">
+    <BaseHeader>
+      <BaseHeader.Menu title="Очень-очень длинное название прое...">
         {menuItems.map((menuItem) => (
-          <Header.Menu.Item key={menuItem.name}>
+          <BaseHeader.Menu.Item key={menuItem.name}>
             {(menuItemProps): React.ReactNode => (
               <a {...menuItemProps} href={menuItem.url}>
                 {menuItem.name}
               </a>
             )}
-          </Header.Menu.Item>
+          </BaseHeader.Menu.Item>
         ))}
-        <Header.Menu.Delimiter />
-        <Header.Menu.Item>
+        <BaseHeader.Menu.Delimiter />
+        <BaseHeader.Menu.Item>
           {(menuItemProps): React.ReactNode => (
             <a {...menuItemProps} href="/">
               Выйти
             </a>
           )}
-        </Header.Menu.Item>
-      </Header.Menu>
-      <Header.Nav navItems={navItems} activeItem={[navItems[0]]} onChangeItem={jest.fn()} />
-    </Header>,
+        </BaseHeader.Menu.Item>
+      </BaseHeader.Menu>
+      <BaseHeader.Nav navItems={navItems} activeItem={[navItems[0]]} onChangeItem={jest.fn()} />
+    </BaseHeader>,
   );
 
-describe('Header', () => {
+describe('BaseHeader', () => {
   test('рендерится без ошибок', () => {
     expect(renderComponent).not.toThrow();
   });
 
   test('рендерится навигация', () => {
-    const header = renderComponent();
+    const BaseHeader = renderComponent();
 
-    expect(header.container.querySelector('.VegaHeader__MenuWrap')).toBeInTheDocument();
-    expect(header.getByText('О проекте')).toBeInTheDocument();
+    expect(BaseHeader.container.querySelector('.VegaBaseHeader__MenuWrap')).toBeInTheDocument();
+    expect(BaseHeader.getByText('О проекте')).toBeInTheDocument();
   });
 });

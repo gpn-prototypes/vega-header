@@ -1,9 +1,9 @@
 import React from 'react';
 import { fireEvent, render, RenderResult, screen, waitFor } from '@testing-library/react';
 
-import { HeaderMenu } from './HeaderMenu';
+import { BaseHeaderMenu } from './BaseHeaderMenu';
 
-type HeaderNavTestProps = React.ComponentProps<typeof HeaderMenu>;
+type BaseHeaderNavTestProps = React.ComponentProps<typeof BaseHeaderMenu>;
 
 const menuItems = [
   { name: 'Пункт 1', url: 'url1' },
@@ -15,32 +15,32 @@ const defaultProps = {
 };
 
 const renderComponent = (
-  props: Omit<HeaderNavTestProps, 'children'> = defaultProps,
+  props: Omit<BaseHeaderNavTestProps, 'children'> = defaultProps,
 ): RenderResult =>
   render(
-    <HeaderMenu {...props}>
+    <BaseHeaderMenu {...props}>
       {menuItems.map((mi) => (
-        <HeaderMenu.Item key={mi.name}>
+        <BaseHeaderMenu.Item key={mi.name}>
           {(itemProps): React.ReactNode => (
             <a onClick={itemProps.closeMenu} href={mi.url}>
               {mi.name}
             </a>
           )}
-        </HeaderMenu.Item>
+        </BaseHeaderMenu.Item>
       ))}
-    </HeaderMenu>,
+    </BaseHeaderMenu>,
   );
 
 const getMenuList = (): HTMLElement => screen.getByRole('menu');
 
-describe('Header', () => {
+describe('BaseHeader', () => {
   test('рендерится без ошибок', () => {
     expect(renderComponent).not.toThrow();
   });
 
   test('открывается меню', async () => {
     const menu = await renderComponent();
-    const menuTrigger = await menu.getByTestId('Header:Menu:Trigger');
+    const menuTrigger = await menu.getByTestId('BaseHeader:Menu:Trigger');
 
     expect(menu.container.querySelector('.VegaMenu')).not.toBeTruthy();
 
@@ -53,7 +53,7 @@ describe('Header', () => {
 
   test('закрывается меню при клике вне меню', async () => {
     const menu = await renderComponent({ ...defaultProps });
-    const menuTrigger = await menu.getByTestId('Header:Menu:Trigger');
+    const menuTrigger = await menu.getByTestId('BaseHeader:Menu:Trigger');
 
     expect(menu.container.querySelector('.VegaMenu')).not.toBeTruthy();
 
@@ -72,7 +72,7 @@ describe('Header', () => {
 
   test('вызывается callback функция', async () => {
     const menu = await renderComponent();
-    const menuTrigger = await menu.getByTestId('Header:Menu:Trigger');
+    const menuTrigger = await menu.getByTestId('BaseHeader:Menu:Trigger');
 
     expect(menu.container.querySelector('.VegaMenu')).not.toBeTruthy();
 

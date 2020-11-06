@@ -1,16 +1,16 @@
 import React from 'react';
 import { Tabs } from '@consta/uikit/Tabs';
 
-import { cnHeader } from '../cn-header';
+import { cnBaseHeader } from '../cn-base-header';
 import { NavItemType } from '../types';
 
-type HeaderNavProps = {
+type BaseHeaderNavProps = {
   navItems: NavItemType[];
   activeItem?: NavItemType;
   onChangeItem: (item: NavItemType) => void;
 };
 
-export const HeaderNav: React.FC<HeaderNavProps> = (props) => {
+export const BaseHeaderNav: React.FC<BaseHeaderNavProps> = (props) => {
   const { navItems, activeItem, onChangeItem } = props;
 
   const handleChangeItem = (item: NavItemType | null): void => {
@@ -20,9 +20,9 @@ export const HeaderNav: React.FC<HeaderNavProps> = (props) => {
   };
 
   return (
-    <nav className={cnHeader('Nav')}>
+    <nav className={cnBaseHeader('Nav')}>
       <Tabs<NavItemType>
-        view="bordered"
+        view="clear"
         items={navItems}
         value={activeItem}
         getLabel={(item): string => item.name}

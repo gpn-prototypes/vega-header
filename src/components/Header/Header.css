@@ -7,10 +7,18 @@
       background: var(--color-control-bg-border-default);
     }
 
-    &_disable {
+    &_disabled {
       &::after {
         content: none;
       }
+    }
+  }
+
+  &__MenuItem {
+    &_disabled {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
