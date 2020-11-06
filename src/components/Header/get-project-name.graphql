@@ -1,0 +1,14 @@
+query GetProjectName($vid: UUID!) {
+  project(vid: $vid) {
+    ...on Project {
+      name
+    }
+
+    ...on Error {
+      code
+      message
+      details
+      payload
+    }
+  }
+}
