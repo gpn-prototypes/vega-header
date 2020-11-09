@@ -1,23 +1,23 @@
 .VegaBaseHeader {
   --BaseHeader-height: 40px;
   display: grid;
-  border-bottom: 1px solid var(--color-bg-border);
 
   width: 100%;
-  grid-template-columns: 298px 2px minmax(200px, 1fr);
-  column-gap: 12px;
 
   height: var(--BaseHeader-height);
 
   background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-bg-border);
+  grid-template-columns: 298px 2px minmax(200px, 1fr);
+  column-gap: 12px;
 
   &__Delimiter {
     width: 2px;
     height: 18px;
 
-    align-self: center;
-
     background-color: var(--color-bg-border);
+
+    align-self: center;
   }
 
   &__MenuWrap {

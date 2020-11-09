@@ -32,17 +32,10 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
     }
   };
 
-  const { portal } = usePortal({ name: 'BaseHeader-root' });
-
-  if (!portal) {
-    return null;
-  }
-
   return (
     <BaseHeaderMenuContext.Provider value={{ closeMenu: handleCloseMenu }}>
       <div className={cnBaseHeader('MenuWrap').mix(className)} role="menubar">
         <Dropdown
-          portal={portal}
           isOpen={isOpen}
           aria-expanded={isOpen}
           aria-hidden={!isOpen}

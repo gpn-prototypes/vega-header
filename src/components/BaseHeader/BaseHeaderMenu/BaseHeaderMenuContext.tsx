@@ -6,4 +6,5 @@ type BaseHeaderMenuContextProps = {
 
 export const BaseHeaderMenuContext = createContext<BaseHeaderMenuContextProps>({});
 
-export const useBaseHeaderMenuContext = (): BaseHeaderMenuContextProps => useContext(BaseHeaderMenuContext);
+export const useBaseHeaderMenuContext = (): BaseHeaderMenuContextProps =>
+  useContext(BaseHeaderMenuContext);

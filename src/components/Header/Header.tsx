@@ -23,90 +23,80 @@ interface NavLinkType extends NavItemType {
 }
 
 type Params = {
-  // eslint-disable-next-line camelcase
-  project_id?: string;
+  projectId?: string;
+};
+
+type HeaderViewProps = {
+  projectName?: string | null;
+  isProjectPage: boolean | null;
+  isCreateProjectPage: boolean | null;
+  isLoading?: boolean;
+  onChangeActive: (item: NavLinkType) => void;
+  pathname: string;
 };
 
 const cnHeader = cn('Header');
 
-export const Header = (): React.ReactElement => {
-  const history = useHistory();
-
-  const location = useLocation();
+export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
+  const { projectName, onChangeActive, isCreateProjectPage, isLoading, isProjectPage, pathname } = props;
 
   const navItems: NavLinkType[] = [
-    { name: 'О проекте', url: '/show/:project_id' },
-    { name: 'Ресурсная база', url: '/show/:project_id/rb' },
+    { name: 'О проекте', url: '/show/:projectId' },
+    { name: 'Ресурсная база', url: '/show/:projectId/rb' },
   ];
-
-  const params = useParams<Params>();
-
-  const { data, loading } = useGetProjectName({
-    skip: !params.project_id,
-    variables: { vid: params.project_id },
-  });
-
-  console.log(data)
-
-  const isProjectsPage = useRouteMatch('/');
-
-  const isExactProjectsPage = isProjectsPage && isProjectsPage.isExact;
-
-  const isCreateProjectPage = useRouteMatch('/create');
-
-  const isExactCreateProjectPage = isCreateProjectPage && isCreateProjectPage.isExact;
 
   const isActiveNavItem = useMemo(() => {
     return navItems.find((item) => {
-      const match = matchPath(location.pathname, {
+      const match = matchPath(pathname, {
         path: item.url,
         exact: true,
       });
 
       return match !== null;
     });
-  }, [location.pathname, navItems]);
+  }, [pathname, navItems]);
 
-  const menuItems = [{ name: 'Проекты', url: '/' }, { name: 'Обучение', disabled: true }, { name: 'Помощь', disabled: true }];
+  const menuItems = [
+    { name: 'Проекты', url: '/' },
+    { name: 'Обучение', disabled: true },
+    { name: 'Помощь', disabled: true },
+  ];
 
   const handleChangeActive = (item: NavLinkType): void => {
-    if (item.url) {
-      history.push(generatePath(item.url, { project_id: params.project_id }));
-    }
+    onChangeActive(item);
   };
 
-  const title = (): string => {
-    if (isExactCreateProjectPage) {
+  const title = (): string | null | undefined => {
+    if (isCreateProjectPage) {
       return 'Создание проекта';
     }
 
-    if (isExactProjectsPage) {
+    if (isProjectPage) {
       return 'Проекты';
     }
 
-    if (data?.data?.__typename === 'Project' && typeof data.data.name === 'string') {
-      return data.data.name;
-    }
-
-    return 'Вега';
+    return projectName;
   };
 
-  const shouldRenderNavItems = !isExactCreateProjectPage && !isExactProjectsPage;
+  const shouldRenderNavItems = !isCreateProjectPage && !isProjectPage;
 
   const menuItemsRender = menuItems.map((item) => {
-    if (isExactProjectsPage && item.url === '/') {
+    if (isProjectPage && item.url === '/') {
       return null;
     }
-
 
     return (
       <BaseHeader.Menu.Item key={item.name} disabled={item.disabled}>
         {(menuItemProps): React.ReactNode => {
-          const itemText = <Text view={item.disabled ? 'ghost' : 'primary'}>{item.name}</Text>
+          const itemText = <Text view={item.disabled ? 'ghost' : 'primary'}>{item.name}</Text>;
 
           if (!item.disabled && item.url !== undefined) {
             return (
-              <Link onClick={menuItemProps.closeMenu} className={menuItemProps.className} to={item.url}>
+              <Link
+                onClick={menuItemProps.closeMenu}
+                className={menuItemProps.className}
+                to={item.url}
+              >
                 {itemText}
               </Link>
             );
@@ -118,7 +108,6 @@ export const Header = (): React.ReactElement => {
               <Badge label="Скоро" view="filled" status="system" size="s" form="round" />
             </div>
           );
-
         }}
       </BaseHeader.Menu.Item>
     );
@@ -126,10 +115,12 @@ export const Header = (): React.ReactElement => {
 
   const cnHeaderMenu = cnHeader('Menu', { disabled: !shouldRenderNavItems });
 
-  console.log(loading, data)
+  const menuTitle = title() ?? '';
 
-  const renderMenu = loading ? <Loader /> : (
-    <BaseHeader.Menu className={cnHeaderMenu} title={title()}>
+  const renderMenu = isLoading ? (
+    <Loader />
+  ) : (
+    <BaseHeader.Menu className={cnHeaderMenu} title={menuTitle}>
       {menuItemsRender}
       <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
@@ -149,7 +140,7 @@ export const Header = (): React.ReactElement => {
         )}
       </BaseHeader.Menu.Item>
     </BaseHeader.Menu>
-  )
+  );
 
   return (
     <BaseHeader>
@@ -162,5 +153,51 @@ export const Header = (): React.ReactElement => {
         />
       )}
     </BaseHeader>
+  );
+};
+
+export const Header = (): React.ReactElement => {
+  const isProjectsPage = useRouteMatch('/');
+
+  const history = useHistory();
+
+  const location = useLocation();
+
+  const params = useParams<Params>();
+
+  const isExactProjectsPage = isProjectsPage && isProjectsPage.isExact;
+
+  const isCreateProjectPage = useRouteMatch('/create');
+
+  const isExactCreateProjectPage = isCreateProjectPage && isCreateProjectPage.isExact;
+
+  const { data, loading } = useGetProjectName({
+    skip: params.projectId === undefined,
+    variables: { vid: params.projectId },
+  });
+
+  const getTitle = (): string | undefined | null => {
+    if (data?.data?.__typename === 'Project') {
+      return data.data.name;
+    }
+
+    return undefined;
+  };
+
+  const handleChangeActiveLink = (item: NavLinkType): void => {
+    if (item.url && params.projectId !== undefined) {
+      history.push(generatePath(item.url, { projectId: params.projectId }))
+    }
+  }
+
+  return (
+    <HeaderView
+      pathname={location.pathname}
+      onChangeActive={handleChangeActiveLink}
+      projectName={getTitle()}
+      isLoading={loading}
+      isCreateProjectPage={isExactCreateProjectPage}
+      isProjectPage={isExactProjectsPage}
+    />
   );
 };

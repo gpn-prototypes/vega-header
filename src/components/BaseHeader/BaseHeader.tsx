@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { cnBaseHeader } from './cn-base-header';
 import { BaseHeaderMenu } from './BaseHeaderMenu';
 import { BaseHeaderNav } from './BaseHeaderNav';
+import { cnBaseHeader } from './cn-base-header';
 
 import './BaseHeader.css';
 
@@ -19,7 +19,7 @@ type BaseHeaderType = React.FC<BaseHeaderProps> & {
 export const BaseHeader: BaseHeaderType = ({ className, children }) => {
   const cn = cnBaseHeader.mix(className);
 
-  return <BaseHeader className={cn}>{children}</BaseHeader>;
+  return <header className={cn}>{children}</header>;
 };
 
 BaseHeader.Menu = BaseHeaderMenu;

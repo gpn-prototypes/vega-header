@@ -29,7 +29,10 @@ export const BaseHeaderMenuItem: React.FC<BaseHeaderMenuItemProps> = (props) => 
       : children;
 
   return (
-    <li className={cnBaseHeader('MenuItem', { disabled }).mix(className).toString()} role="menuitem">
+    <li
+      className={cnBaseHeader('MenuItem', { disabled }).mix(className).toString()}
+      role="menuitem"
+    >
       {content}
     </li>
   );

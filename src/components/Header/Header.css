@@ -2,8 +2,10 @@
   &__Menu {
     &::after {
       content: '';
+
       width: 1px;
       height: 18px;
+
       background: var(--color-control-bg-border-default);
     }
 

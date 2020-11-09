@@ -15,7 +15,7 @@ export const App = (props: AppProps): ReactElement => {
     <ApolloProvider client={graphqlClient}>
       <BrowserRouter basename="/projects">
         <Route
-          path={['/show/:project_id', '/edit/:project_id', '/show/:project_id/rb', '/', '/create']}
+          path={['/show/:projectId', '/edit/:projectId', '/show/:projectId/rb', '/', '/create']}
         >
           <VegaRoot defaultTheme="dark">
             <Header />
