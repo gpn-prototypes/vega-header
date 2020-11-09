@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Dropdown, IconHamburger, Text, usePortal } from '@gpn-prototypes/vega-ui';
+import { Button, Dropdown, IconHamburger, Text } from '@gpn-prototypes/vega-ui';
 
 import { cnBaseHeader } from '../cn-base-header';
 

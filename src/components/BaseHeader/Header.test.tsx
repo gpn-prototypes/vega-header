@@ -44,7 +44,7 @@ const renderComponent = (): RenderResult =>
           )}
         </BaseHeader.Menu.Item>
       </BaseHeader.Menu>
-      <BaseHeader.Nav navItems={navItems} activeItem={[navItems[0]]} onChangeItem={jest.fn()} />
+      <BaseHeader.Nav navItems={navItems} activeItem={navItems[0]} onChangeItem={jest.fn()} />
     </BaseHeader>,
   );
 
@@ -54,9 +54,9 @@ describe('BaseHeader', () => {
   });
 
   test('рендерится навигация', () => {
-    const BaseHeader = renderComponent();
+    const header = renderComponent();
 
-    expect(BaseHeader.container.querySelector('.VegaBaseHeader__MenuWrap')).toBeInTheDocument();
-    expect(BaseHeader.getByText('О проекте')).toBeInTheDocument();
+    expect(header.container.querySelector('.VegaBaseHeader__MenuWrap')).toBeInTheDocument();
+    expect(header.getByText('О проекте')).toBeInTheDocument();
   });
 });
