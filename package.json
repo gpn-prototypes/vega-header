@@ -44,7 +44,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
-    "single-spa-react": "^3.1.0"
+    "single-spa-react": "^3.2.0"
   },
   "devDependencies": {
     "@gpn-prototypes/frontend-configs": "^1.2.12",
