@@ -1,0 +1,26 @@
+.Header {
+  &__Menu {
+    &::after {
+      content: '';
+
+      width: 1px;
+      height: 18px;
+
+      background: var(--color-control-bg-border-default);
+    }
+
+    &_disabled {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &__MenuItem {
+    &_disabled {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

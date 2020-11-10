@@ -5,7 +5,7 @@ const { getAppConfig } = require('./app-config');
 
 const { projectName } = getAppConfig();
 
-const externalPackages = ['@gpn-prototypes/vega-ui'];
+const externalPackages = ['@gpn-prototypes/vega-ui', '@apollo/client', 'grapqhl'];
 
 module.exports = (webpackConfigEnv) => {
   const defaultConfig = singleSpaDefaults({
@@ -21,7 +21,7 @@ module.exports = (webpackConfigEnv) => {
     module: {
       rules: [
         {
-          test: /\.(png|jpe?g|gif)$/i,
+          test: /\.(png|jpe?g|gif|svg)$/i,
           use: [
             {
               loader: 'file-loader',

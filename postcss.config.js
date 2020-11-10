@@ -1,6 +1,6 @@
-// ref https://github.com/gpn-prototypes/vega-auth/commit/c0e41589049d99cd63e6616bae937a13aea014f0
-const nested = require('postcss-nested');
+const createPostcssConfig = require('@gpn-prototypes/frontend-configs/postcss.config');
 
 module.exports = {
-  plugins: [nested()],
+  ...createPostcssConfig(),
+  plugins: [...createPostcssConfig().plugins],
 };
