@@ -5,7 +5,7 @@ import { cnBaseHeader } from '../cn-base-header';
 import { useBaseHeaderMenuContext } from './BaseHeaderMenuContext';
 
 type ItemRenderProps = {
-  closeMenu?: (e: MouseEvent | TouchEvent | React.SyntheticEvent) => void;
+  closeMenu?: (e: React.SyntheticEvent) => void;
   className: string;
 };
 

@@ -3,9 +3,6 @@ const singleSpaDefaults = require('webpack-config-single-spa-react-ts');
 const ImportMapPlugin = require('webpack-import-map-plugin');
 const { getAppConfig } = require('./app-config');
 
-// eslint-disable-next-line global-require
-const postCssConfig = { postcssOptions: { ...require('./postcss.config') } };
-
 const { projectName } = getAppConfig();
 
 const externalPackages = ['@gpn-prototypes/vega-ui', '@apollo/client', 'grapqhl'];
@@ -36,7 +33,6 @@ module.exports = (webpackConfigEnv) => {
           use: [
             {
               loader: 'postcss-loader',
-              options: { ...postCssConfig },
             },
           ],
         },
