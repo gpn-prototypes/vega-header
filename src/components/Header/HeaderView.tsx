@@ -1,13 +1,12 @@
 import React, { useMemo } from 'react';
+import { Link, matchPath } from 'react-router-dom';
+import { Badge, Loader, Text } from '@gpn-prototypes/vega-ui';
 import cn from 'bem-cn';
-import { matchPath, Link } from 'react-router-dom';
 
+import { useAppContext } from '../../context';
 import { BaseHeader } from '../BaseHeader';
 
-import { Badge, Loader, Text } from '@gpn-prototypes/vega-ui';
-
 import { NavLinkType } from './types';
-
 
 type HeaderViewProps = {
   projectName?: string | null;
@@ -21,7 +20,15 @@ type HeaderViewProps = {
 const cnHeader = cn('Header');
 
 export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
-  const { projectName, onChangeActive, isCreateProjectPage, isLoading, isProjectPage, pathname } = props;
+  const {
+    projectName,
+    onChangeActive,
+    isCreateProjectPage,
+    isLoading,
+    isProjectPage,
+    pathname,
+  } = props;
+  const { identity } = useAppContext();
 
   const navItems: NavLinkType[] = [
     { name: 'О проекте', url: '/show/:projectId' },
@@ -111,7 +118,8 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
           <Link
             onClick={(e) => {
               if (menuItemProps.closeMenu) {
-                localStorage.removeItem('auth-token');
+                // @ts-expect-error: ожидает типы
+                identity.logout();
                 menuItemProps.closeMenu(e);
               }
             }}
