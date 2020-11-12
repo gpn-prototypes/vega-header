@@ -3,7 +3,7 @@ import { Link, matchPath } from 'react-router-dom';
 import { Badge, Loader, Text } from '@gpn-prototypes/vega-ui';
 import cn from 'bem-cn';
 
-import { useAppContext } from '../../context';
+import { useAppContext } from '../../platform/app-context/AppContext';
 import { BaseHeader } from '../BaseHeader';
 
 import { NavLinkType } from './types';
@@ -115,19 +115,19 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
       <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
         {(menuItemProps): React.ReactNode => (
-          <Link
+          <a
             onClick={(e) => {
+              e.preventDefault();
               if (menuItemProps.closeMenu) {
-                // @ts-expect-error: ожидает типы
                 identity.logout();
                 menuItemProps.closeMenu(e);
               }
             }}
             className={menuItemProps.className}
-            to="/login"
+            href="/login"
           >
             <Text>Выйти</Text>
-          </Link>
+          </a>
         )}
       </BaseHeader.Menu.Item>
     </BaseHeader.Menu>

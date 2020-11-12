@@ -4,11 +4,12 @@ import { ApolloClient, ApolloProvider, NormalizedCacheObject } from '@apollo/cli
 import { Root as VegaRoot } from '@gpn-prototypes/vega-ui';
 
 import { Header } from '../components/Header';
-import { AppProvider } from '../context';
+import { AppProvider } from '../platform/app-context/AppProvider';
+import { Identity } from '../platform/app-context/type';
 
 type AppProps = {
   graphqlClient: ApolloClient<NormalizedCacheObject>;
-  identity?: unknown;
+  identity: Identity;
 };
 
 export const App = (props: AppProps): ReactElement => {
