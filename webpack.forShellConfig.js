@@ -9,12 +9,25 @@ const { projectName } = getAppConfig();
 
 const externalPackages = ['@gpn-prototypes/vega-ui', '@apollo/client', 'grapqhl'];
 
+function getPort(webpackConfigEnv) {
+  let port = process.env.PORT || 3000;
+  if (webpackConfigEnv !== undefined && 'port' in webpackConfigEnv) {
+    port = webpackConfigEnv.port;
+  }
+  return port;
+}
+
 module.exports = (webpackConfigEnv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: 'vega',
     projectName,
     webpackConfigEnv,
   });
+
+  const PORT = getPort(webpackConfigEnv);
+  const YC_DEPLOYMENT = process.env.YC_DEPLOYMENT === 'true'; // Yandex Cloud Deployment
+  const NODE_ENV = process.env.NODE_ENV || 'development';
+  const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 
   const envConfig = dotenv.config();
 
@@ -51,7 +64,13 @@ module.exports = (webpackConfigEnv) => {
       ],
     },
     plugins: [
-      new webpack.DefinePlugin(envKeys),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+        'process.env.YC_DEPLOYMENT': JSON.stringify(YC_DEPLOYMENT),
+        'process.env.BASE_API_URL': JSON.stringify(process.env.BASE_API_URL),
+        'process.env.BASE_URL': JSON.stringify(BASE_URL),
+        ...envKeys,
+      }),
       new ImportMapPlugin({
         fileName: 'import-map.json',
         baseUrl: process.env.BASE_URL,
