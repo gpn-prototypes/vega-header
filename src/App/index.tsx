@@ -22,4 +22,13 @@ const client = new ApolloClient({
   }),
 });
 
-ReactDOM.render(<App graphqlClient={client} />, document.getElementById('root'));
+const identity = {
+  logout: () => {
+    localStorage.removeItem('auth-token');
+  },
+};
+
+ReactDOM.render(
+  <App graphqlClient={client} identity={identity} />,
+  document.getElementById('root'),
+);
