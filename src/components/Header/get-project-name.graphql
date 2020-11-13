@@ -1,7 +1,8 @@
 query GetProjectName($vid: UUID!) {
-  data: project(vid: $vid) {
+  project(vid: $vid) {
     ...on Project {
       name
+      vid
     }
 
     ...on Error {
