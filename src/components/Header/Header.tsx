@@ -37,8 +37,8 @@ export const Header = (): React.ReactElement => {
   });
 
   const getTitle = (): string | undefined | null => {
-    if (data?.data?.__typename === 'Project') {
-      return data.data.name;
+    if (data?.project?.__typename === 'Project') {
+      return data.project.name;
     }
 
     return undefined;
