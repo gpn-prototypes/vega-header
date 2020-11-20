@@ -11,6 +11,7 @@ interface BaseHeaderMenuProps {
   title: string;
   children: React.ReactNode;
   className?: string;
+  dropdownClassName?: string;
 }
 
 const testId = {
@@ -23,7 +24,7 @@ type BaseHeaderMenuType = React.FC<BaseHeaderMenuProps> & {
 };
 
 export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
-  const { title, children, className } = props;
+  const { title, children, className, dropdownClassName } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCloseMenu = (): void => {
@@ -66,7 +67,7 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
           </Dropdown.Trigger>
           <Dropdown.Menu>
             {({ props: menuProps }): React.ReactNode => (
-              <div className={cnBaseHeader('Dropdown')} {...menuProps}>
+              <div className={cnBaseHeader('Dropdown').mix(dropdownClassName)} {...menuProps}>
                 <ul className={cnBaseHeader('Menu')} role="menu">
                   {children}
                 </ul>
@@ -74,7 +75,9 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
             )}
           </Dropdown.Menu>
         </Dropdown>
-        <Text className={cnBaseHeader('MenuTriggerText').toString()}>{title}</Text>
+        <Text size="s" className={cnBaseHeader('MenuTriggerText').toString()}>
+          {title}
+        </Text>
       </div>
     </BaseHeaderMenuContext.Provider>
   );

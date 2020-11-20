@@ -16,11 +16,19 @@
     }
   }
 
+  &__Dropdown {
+    margin-left: calc(var(--space-3xs) + var(--space-s));
+  }
+
   &__MenuItem {
     &_disabled {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+  }
+
+  &__Delimiter {
+    margin-bottom: 11px;
   }
 }

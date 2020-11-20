@@ -111,9 +111,13 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const renderMenu = isLoading ? (
     <Loader />
   ) : (
-    <BaseHeader.Menu className={cnHeaderMenu} title={menuTitle}>
+    <BaseHeader.Menu
+      className={cnHeaderMenu}
+      dropdownClassName={cnHeader('Dropdown')}
+      title={menuTitle}
+    >
       {menuItemsRender}
-      <BaseHeader.Menu.Delimiter />
+      <BaseHeader.Menu.Delimiter className={cnHeader('Delimiter')} />
       <BaseHeader.Menu.Item>
         {(menuItemProps): React.ReactNode => (
           <a
