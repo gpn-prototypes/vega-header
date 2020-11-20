@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Dropdown, IconHamburger, Text } from '@gpn-prototypes/vega-ui';
+import { useLocation } from 'react-router-dom';
+import { Button, Dropdown, IconHamburger, Text, useOnChange } from '@gpn-prototypes/vega-ui';
 
 import { cnBaseHeader } from '../cn-base-header';
 
@@ -32,6 +33,10 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
       setIsOpen(false);
     }
   };
+
+  const location = useLocation();
+
+  useOnChange(location.pathname, handleCloseMenu);
 
   return (
     <BaseHeaderMenuContext.Provider value={{ closeMenu: handleCloseMenu }}>
