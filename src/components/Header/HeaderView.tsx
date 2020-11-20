@@ -108,9 +108,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
 
   const menuTitle = title() ?? '';
 
-  const renderMenu = isLoading ? (
-    <Loader />
-  ) : (
+  const renderMenu = isLoading ? null : (
     <BaseHeader.Menu
       className={cnHeaderMenu}
       dropdownClassName={cnHeader('Dropdown')}
