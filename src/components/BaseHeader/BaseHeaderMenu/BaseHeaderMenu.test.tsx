@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { fireEvent, render, RenderResult, screen, waitFor } from '@testing-library/react';
 
 import { BaseHeaderMenu } from './BaseHeaderMenu';
@@ -18,17 +19,19 @@ const renderComponent = (
   props: Omit<BaseHeaderNavTestProps, 'children'> = defaultProps,
 ): RenderResult =>
   render(
-    <BaseHeaderMenu {...props}>
-      {menuItems.map((mi) => (
-        <BaseHeaderMenu.Item key={mi.name}>
-          {(itemProps): React.ReactNode => (
-            <a onClick={itemProps.closeMenu} href={mi.url}>
-              {mi.name}
-            </a>
-          )}
-        </BaseHeaderMenu.Item>
-      ))}
-    </BaseHeaderMenu>,
+    <Router>
+      <BaseHeaderMenu {...props}>
+        {menuItems.map((mi) => (
+          <BaseHeaderMenu.Item key={mi.name}>
+            {(itemProps): React.ReactNode => (
+              <a onClick={itemProps.closeMenu} href={mi.url}>
+                {mi.name}
+              </a>
+            )}
+          </BaseHeaderMenu.Item>
+        ))}
+      </BaseHeaderMenu>
+    </Router>,
   );
 
 const getMenuList = (): HTMLElement => screen.getByRole('menu');
