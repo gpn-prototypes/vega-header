@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Link, matchPath } from 'react-router-dom';
-import { Badge, Loader, Text } from '@gpn-prototypes/vega-ui';
+import { Badge, Text } from '@gpn-prototypes/vega-ui';
 import cn from 'bem-cn';
 
 import { useAppContext } from '../../platform/app-context/AppContext';
