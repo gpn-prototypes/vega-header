@@ -1,4 +1,11 @@
 .Header {
+  &_isProjectsPage {
+    @media (min-width: 1280px) {
+      min-width: 1504px;
+    }
+  }
+
+
   &__Menu {
     &::after {
       content: '';

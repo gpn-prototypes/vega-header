@@ -11,10 +11,6 @@
   grid-template-columns: 298px 2px minmax(200px, 1fr);
   column-gap: 12px;
 
-  @media (min-width: 1280px) {
-    min-width: 1504px;
-  }
-
   &__Delimiter {
     width: 2px;
     height: 18px;

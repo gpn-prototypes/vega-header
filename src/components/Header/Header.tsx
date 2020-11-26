@@ -57,7 +57,7 @@ export const Header = (): React.ReactElement => {
       projectName={getTitle()}
       isLoading={loading}
       isCreateProjectPage={isExactCreateProjectPage}
-      isProjectPage={isExactProjectsPage}
+      isProjectsPage={isExactProjectsPage}
     />
   );
 };

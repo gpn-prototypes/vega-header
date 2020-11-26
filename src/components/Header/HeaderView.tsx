@@ -10,7 +10,7 @@ import { NavLinkType } from './types';
 
 type HeaderViewProps = {
   projectName?: string | null;
-  isProjectPage: boolean | null;
+  isProjectsPage: boolean | null;
   isCreateProjectPage: boolean | null;
   isLoading?: boolean;
   onChangeActive: (item: NavLinkType) => void;
@@ -25,7 +25,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     onChangeActive,
     isCreateProjectPage,
     isLoading,
-    isProjectPage,
+    isProjectsPage,
     pathname,
   } = props;
   const { identity } = useAppContext();
@@ -61,17 +61,17 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
       return 'Создание проекта';
     }
 
-    if (isProjectPage) {
+    if (isProjectsPage) {
       return 'Проекты';
     }
 
     return projectName;
   };
 
-  const shouldRenderNavItems = !isCreateProjectPage && !isProjectPage;
+  const shouldRenderNavItems = !isCreateProjectPage && !isProjectsPage;
 
   const menuItemsRender = menuItems.map((item) => {
-    if (isProjectPage && item.url === '/') {
+    if (isProjectsPage && item.url === '/') {
       return null;
     }
 
@@ -134,7 +134,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   );
 
   return (
-    <BaseHeader>
+    <BaseHeader className={cnHeader({ isProjectsPage })}>
       {renderMenu}
       {shouldRenderNavItems && (
         <BaseHeader.Nav
