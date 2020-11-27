@@ -22,6 +22,7 @@ export const App = (props: AppProps): ReactElement => {
         <Router history={history}>
           <Route
             path={[
+              '/projects/show/:projectId/lc',
               '/projects/show/:projectId',
               '/projects/show/:projectId/rb',
               '/projects',

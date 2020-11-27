@@ -48,7 +48,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     onChangeActive(item);
   };
 
-  const [isCreateProjectPage, isProjectsPage] = ['/create', '/'].map(
+  const [isCreateProjectPage, isProjectsPage] = ['/projects/create', '/projects'].map(
     (path) => matchPath(pathname, { path, exact: true }) !== null,
   );
 
