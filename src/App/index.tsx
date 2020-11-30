@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
-
+import { Identity } from '@gpn-prototypes/vega-sdk';
 import { createBrowserHistory } from 'history';
 
 import { App } from './App';
@@ -24,11 +24,7 @@ const client = new ApolloClient({
   }),
 });
 
-const identity = {
-  logout: () => {
-    localStorage.removeItem('auth-token');
-  },
-};
+const identity = new Identity({ apiUrl: '/' });
 
 ReactDOM.render(
   <App history={createBrowserHistory()} graphqlClient={client} identity={identity} />,

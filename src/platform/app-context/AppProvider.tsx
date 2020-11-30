@@ -1,7 +1,7 @@
 import React from 'react';
+import { Identity } from '@gpn-prototypes/vega-sdk';
 
 import { AppContext } from './AppContext';
-import { Identity } from './type';
 
 type AppProviderProps = {
   children: React.ReactNode;

@@ -2022,6 +2022,14 @@
     "@gpn-prototypes/vega-text-field" "^0.1.11"
     bem-cn "^3.0.1"
 
+"@gpn-prototypes/vega-sdk@^1.4.0":
+  version "1.4.0"
+  resolved "https://npm.pkg.github.com/download/@gpn-prototypes/vega-sdk/1.4.0/b1b79de6b773596fe458bcf124010909c094eed04b672496903180ebcb2804c7#bf064ac885c4dca4e25322d493a8dcb2c751740f"
+  integrity sha512-Euzm9kVnbJ14OXW6eT1x8wHdJLq59YolpDmV3nrJyJ9rvrL8kfju9gZxU4/YKjU8GHE2b497geAVGnZMQzQTWA==
+  dependencies:
+    "@apollo/client" "^3.2.5"
+    graphql "^15.4.0"
+
 "@gpn-prototypes/vega-sidebar@^0.2.17":
   version "0.2.17"
   resolved "https://npm.pkg.github.com/download/@gpn-prototypes/vega-sidebar/0.2.17/7e466660e23c89ca55c8ce5161d0d8f9247a3d21e1e121b0eeb8caacb03626f9#fe58f468b822b9db6d6edc9d68ca6f342ca90698"

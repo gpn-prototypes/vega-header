@@ -1,5 +1,6 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { Identity } from '@gpn-prototypes/vega-sdk';
 import { render } from '@testing-library/react';
 import { createBrowserHistory } from 'history';
 
@@ -15,7 +16,7 @@ describe('App', () => {
       <App
         history={createBrowserHistory()}
         graphqlClient={client}
-        identity={{ logout: () => {} }}
+        identity={new Identity({ apiUrl: '/' })}
       />,
     );
   });
