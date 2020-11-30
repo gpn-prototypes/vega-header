@@ -33,6 +33,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const navItems: NavLinkType[] = [
     { name: 'О проекте', url: '/show/:projectId' },
     { name: 'Ресурсная база', url: '/show/:projectId/rb' },
+    { name: 'Логика проекта', url: '/show/:projectId/lc' },
   ];
 
   const isActiveNavItem = useMemo(() => {
