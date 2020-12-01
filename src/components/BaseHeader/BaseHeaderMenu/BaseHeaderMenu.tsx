@@ -23,12 +23,14 @@ interface BaseHeaderMenuProps {
 }
 
 const testId = {
-  trigger: 'BaseHeader:Menu:Trigger',
-};
+  trigger: 'BaseHeader:menu:trigger',
+  title: 'BaseHeader:menu:title',
+} as const;
 
 type BaseHeaderMenuType = React.FC<BaseHeaderMenuProps> & {
   Delimiter: typeof BaseHeaderMenuDelimiter;
   Item: typeof BaseHeaderMenuItem;
+  testId: typeof testId;
 };
 
 export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
@@ -95,6 +97,7 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
           size="s"
           aria-label="Триггер для выпадающего меню шапки"
           className={cnBaseHeader('MenuTriggerText').toString()}
+          data-testid={testId.title}
         >
           {title}
         </Text>
@@ -105,3 +108,4 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
 
 BaseHeaderMenu.Delimiter = BaseHeaderMenuDelimiter;
 BaseHeaderMenu.Item = BaseHeaderMenuItem;
+BaseHeaderMenu.testId = testId;

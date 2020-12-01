@@ -8,19 +8,22 @@ const navItems = [
   {
     name: 'О проекте',
     isActive: true,
+    testId: 'about',
   },
   {
     name: 'Ресурсная база',
+    testId: 'rb',
   },
   {
     name: 'Геологические риски',
+    testId: 'gr',
   },
 ];
 
 const menuItems = [
-  { name: 'Проекты', url: '' },
-  { name: 'Обучение', url: '' },
-  { name: 'Помощь', url: '' },
+  { name: 'Проекты', url: '', testId: 'projects' },
+  { name: 'Обучение', url: '', testId: 'training' },
+  { name: 'Помощь', url: '', testId: 'help' },
 ];
 
 const renderComponent = (): RenderResult =>
