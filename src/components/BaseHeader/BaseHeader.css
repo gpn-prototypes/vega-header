@@ -74,7 +74,7 @@
   }
 
   &__MenuDelimiter {
-    margin: 17px 12px;
+    margin: 13px 12px;
 
     height: 1px;
 
@@ -89,6 +89,6 @@
     grid-column: 3;
 
     /* Фикс из-за табов. ФР: https://s.csssr.ru/UMYJTGU0M/2020-11-10-16-13-03-rq97L.jpg. ОР: https://s.csssr.ru/UMYJTGU0M/2020-11-10-16-14-08-ziO46.jpg */
-    margin-top: 1px;
+    margin-top: 5px;
   }
 }

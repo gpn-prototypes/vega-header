@@ -79,7 +79,11 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     return (
       <BaseHeader.Menu.Item key={item.name} disabled={item.disabled}>
         {(menuItemProps): React.ReactNode => {
-          const itemText = <Text view={item.disabled ? 'ghost' : 'primary'}>{item.name}</Text>;
+          const itemText = (
+            <Text size="s" view={item.disabled ? 'ghost' : 'primary'}>
+              {item.name}
+            </Text>
+          );
 
           if (!item.disabled && item.url !== undefined) {
             return (
@@ -115,7 +119,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
       title={menuTitle}
     >
       {menuItemsRender}
-      <BaseHeader.Menu.Delimiter className={cnHeader('Delimiter')} />
+      <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
         {(menuItemProps): React.ReactNode => (
           <a
@@ -129,7 +133,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
             className={menuItemProps.className}
             href="/login"
           >
-            <Text>Выйти</Text>
+            <Text size="s">Выйти</Text>
           </a>
         )}
       </BaseHeader.Menu.Item>
