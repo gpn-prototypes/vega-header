@@ -39,6 +39,9 @@
   }
 
   &__Dropdown {
+    --z-index-header-dropdown: 100;
+    z-index: var(--z-index-header-dropdown);
+
     width: 240px;
 
     background-color: var(--color-bg-default);
