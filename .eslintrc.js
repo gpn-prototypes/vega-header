@@ -10,7 +10,7 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/no-empty-function': 'off',
-    '@typescript-eslint/no-explicit-any': 'error',
+    'no-underscore-dangle': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-redeclare': 'off',
@@ -22,7 +22,7 @@ module.exports = {
     'import/resolver': {
       alias: {
         map: [['@', './src/']],
-        extensions: ['.ts', '.tsx', '.json', 'js', 'jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       },
     },
   },

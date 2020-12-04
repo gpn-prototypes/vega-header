@@ -20,7 +20,7 @@ export const BaseHeaderNav: React.FC<BaseHeaderNavProps> = (props) => {
   };
 
   return (
-    <nav className={cnBaseHeader('Nav')}>
+    <nav aria-label="Навигация шапки" className={cnBaseHeader('Nav')}>
       <Tabs<NavItemType>
         view="clear"
         size="s"
