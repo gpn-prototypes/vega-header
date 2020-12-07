@@ -2,6 +2,9 @@ const webpackMerge = require('webpack-merge');
 const singleSpaDefaults = require('webpack-config-single-spa-react-ts');
 const ImportMapPlugin = require('webpack-import-map-plugin');
 const { getAppConfig } = require('./app-config');
+const dotenv = require('dotenv');
+
+const webpack = require('webpack');
 
 const { projectName } = getAppConfig();
 
@@ -13,6 +16,16 @@ module.exports = (webpackConfigEnv) => {
     projectName,
     webpackConfigEnv,
   });
+
+  const envConfig = dotenv.config();
+
+  const env = envConfig.error ? {} : envConfig.parsed;
+
+  const envKeys = Object.keys(env).reduce((prev, next) => {
+    // eslint-disable-next-line no-param-reassign
+    prev[`process.env.${next}`] = JSON.stringify(env[next]);
+    return prev;
+  }, {});
 
   if (!process.env.BASE_API_URL) {
     throw new Error('env.BASE_API_URL is empty');
@@ -43,6 +56,9 @@ module.exports = (webpackConfigEnv) => {
       ],
     },
     plugins: [
+      new webpack.DefinePlugin({
+        ...envKeys,
+      }),
       new ImportMapPlugin({
         fileName: 'import-map.json',
         baseUrl: process.env.BASE_URL,
