@@ -14,6 +14,10 @@ module.exports = (webpackConfigEnv) => {
     webpackConfigEnv,
   });
 
+  if (!process.env.BASE_API_URL) {
+    throw new Error('env.BASE_API_URL is empty');
+  }
+
   const config = webpackMerge.smart(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
     entry: ['./src/singleSpaEntry.tsx'],
