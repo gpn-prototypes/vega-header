@@ -14,7 +14,7 @@ const renderComponent = (props: Partial<HeaderViewProps> = {}): RenderResult => 
 };
 
 function findTrigger(): HTMLElement | null {
-  return screen.queryByLabelText('Триггер для меню шапки');
+  return screen.queryByLabelText('Триггер для выпадающего меню шапки');
 }
 
 function findTabs(): HTMLElement | null {
