@@ -76,23 +76,6 @@ describe('BaseHeaderMenu', () => {
     });
   });
 
-  test('вызывается callback функция', async () => {
-    const menu = renderComponent();
-    openDropdown(menu);
-
-    await waitFor(() => {
-      expect(getMenuList()).toBeInTheDocument();
-    });
-
-    const menuItem = await screen.getByText('Пункт 2');
-
-    fireEvent.click(menuItem);
-
-    await waitFor(() => {
-      expect(menu.container.querySelector('[role="menu"]')).toBe(null);
-    });
-  });
-
   test('при смене pathname dropdown закрывается', async () => {
     const menu = renderComponent({ pathname: '/test', title: 'test' });
 

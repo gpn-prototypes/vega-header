@@ -93,7 +93,7 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
         </Dropdown>
         <Text
           size="s"
-          aria-label="Триггер для меню шапки"
+          aria-label="Триггер для выпадающего меню шапки"
           className={cnBaseHeader('MenuTriggerText').toString()}
         >
           {title}
