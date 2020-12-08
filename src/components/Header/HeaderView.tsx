@@ -8,10 +8,8 @@ import { BaseHeader } from '../BaseHeader';
 
 import { NavLinkType } from './types';
 
-type HeaderViewProps = {
+export type HeaderViewProps = {
   projectName?: string | null;
-  isProjectPage: boolean | null;
-  isCreateProjectPage: boolean | null;
   isLoading?: boolean;
   onChangeActive: (item: NavLinkType) => void;
   pathname: string;
@@ -20,14 +18,7 @@ type HeaderViewProps = {
 const cnHeader = cn('Header');
 
 export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
-  const {
-    projectName,
-    onChangeActive,
-    isCreateProjectPage,
-    isLoading,
-    isProjectPage,
-    pathname,
-  } = props;
+  const { projectName, onChangeActive, isLoading, pathname } = props;
   const { identity } = useAppContext();
 
   const navItems: NavLinkType[] = [
@@ -57,22 +48,26 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     onChangeActive(item);
   };
 
+  const [isCreateProjectPage, isProjectsPage] = ['/create', '/'].map(
+    (path) => matchPath(pathname, { path, exact: true }) !== null,
+  );
+
   const title = (): string | null | undefined => {
     if (isCreateProjectPage) {
       return 'Создание проекта';
     }
 
-    if (isProjectPage) {
+    if (isProjectsPage) {
       return 'Проекты';
     }
 
     return projectName;
   };
 
-  const shouldRenderNavItems = !isCreateProjectPage && !isProjectPage;
+  const shouldRenderNavItems = !isCreateProjectPage && !isProjectsPage;
 
   const menuItemsRender = menuItems.map((item) => {
-    if (isProjectPage && item.url === '/') {
+    if (isProjectsPage && item.url === '/') {
       return null;
     }
 
@@ -117,6 +112,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
       className={cnHeaderMenu}
       dropdownClassName={cnHeader('Dropdown')}
       title={menuTitle}
+      pathname={pathname}
     >
       {menuItemsRender}
       <BaseHeader.Menu.Delimiter />

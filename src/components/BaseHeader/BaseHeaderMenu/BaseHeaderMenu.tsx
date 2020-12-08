@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Button, Dropdown, IconHamburger, Text, useOnChange } from '@gpn-prototypes/vega-ui';
+import {
+  Button,
+  Dropdown,
+  IconHamburger,
+  Text,
+  useOnChange,
+  usePreviousRef,
+} from '@gpn-prototypes/vega-ui';
 
 import { cnBaseHeader } from '../cn-base-header';
 
@@ -13,6 +19,7 @@ interface BaseHeaderMenuProps {
   children: React.ReactNode;
   className?: string;
   dropdownClassName?: string;
+  pathname?: string;
 }
 
 const testId = {
@@ -25,7 +32,7 @@ type BaseHeaderMenuType = React.FC<BaseHeaderMenuProps> & {
 };
 
 export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
-  const { title, children, className, dropdownClassName } = props;
+  const { title, children, className, dropdownClassName, pathname } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCloseMenu = (): void => {
@@ -34,9 +41,13 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
     }
   };
 
-  const location = useLocation();
+  const previousPathname = usePreviousRef(pathname).current;
 
-  useOnChange(location.pathname, handleCloseMenu);
+  useOnChange(pathname, () => {
+    if (previousPathname !== null && pathname !== previousPathname) {
+      handleCloseMenu();
+    }
+  });
 
   return (
     <BaseHeaderMenuContext.Provider value={{ closeMenu: handleCloseMenu }}>
@@ -80,7 +91,11 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
             )}
           </Dropdown.Menu>
         </Dropdown>
-        <Text size="s" className={cnBaseHeader('MenuTriggerText').toString()}>
+        <Text
+          size="s"
+          aria-label="Триггер для выпадающего меню шапки"
+          className={cnBaseHeader('MenuTriggerText').toString()}
+        >
           {title}
         </Text>
       </div>
