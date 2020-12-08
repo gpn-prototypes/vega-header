@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Link, matchPath } from 'react-router-dom';
-import { Badge, Loader, Text } from '@gpn-prototypes/vega-ui';
+import { Badge, Text } from '@gpn-prototypes/vega-ui';
 import cn from 'bem-cn';
 
 import { useAppContext } from '../../platform/app-context/AppContext';
@@ -79,7 +79,11 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     return (
       <BaseHeader.Menu.Item key={item.name} disabled={item.disabled}>
         {(menuItemProps): React.ReactNode => {
-          const itemText = <Text view={item.disabled ? 'ghost' : 'primary'}>{item.name}</Text>;
+          const itemText = (
+            <Text size="s" view={item.disabled ? 'ghost' : 'primary'}>
+              {item.name}
+            </Text>
+          );
 
           if (!item.disabled && item.url !== undefined) {
             return (
@@ -108,10 +112,12 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
 
   const menuTitle = title() ?? '';
 
-  const renderMenu = isLoading ? (
-    <Loader />
-  ) : (
-    <BaseHeader.Menu className={cnHeaderMenu} title={menuTitle}>
+  const renderMenu = isLoading ? null : (
+    <BaseHeader.Menu
+      className={cnHeaderMenu}
+      dropdownClassName={cnHeader('Dropdown')}
+      title={menuTitle}
+    >
       {menuItemsRender}
       <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
@@ -127,7 +133,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
             className={menuItemProps.className}
             href="/login"
           >
-            <Text>Выйти</Text>
+            <Text size="s">Выйти</Text>
           </a>
         )}
       </BaseHeader.Menu.Item>

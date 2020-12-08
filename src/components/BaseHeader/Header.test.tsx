@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { render, RenderResult } from '@testing-library/react';
 
 import { BaseHeader } from './BaseHeader';
@@ -24,28 +25,30 @@ const menuItems = [
 
 const renderComponent = (): RenderResult =>
   render(
-    <BaseHeader>
-      <BaseHeader.Menu title="Очень-очень длинное название прое...">
-        {menuItems.map((menuItem) => (
-          <BaseHeader.Menu.Item key={menuItem.name}>
+    <Router>
+      <BaseHeader>
+        <BaseHeader.Menu title="Очень-очень длинное название прое...">
+          {menuItems.map((menuItem) => (
+            <BaseHeader.Menu.Item key={menuItem.name}>
+              {(menuItemProps): React.ReactNode => (
+                <a {...menuItemProps} href={menuItem.url}>
+                  {menuItem.name}
+                </a>
+              )}
+            </BaseHeader.Menu.Item>
+          ))}
+          <BaseHeader.Menu.Delimiter />
+          <BaseHeader.Menu.Item>
             {(menuItemProps): React.ReactNode => (
-              <a {...menuItemProps} href={menuItem.url}>
-                {menuItem.name}
+              <a {...menuItemProps} href="/">
+                Выйти
               </a>
             )}
           </BaseHeader.Menu.Item>
-        ))}
-        <BaseHeader.Menu.Delimiter />
-        <BaseHeader.Menu.Item>
-          {(menuItemProps): React.ReactNode => (
-            <a {...menuItemProps} href="/">
-              Выйти
-            </a>
-          )}
-        </BaseHeader.Menu.Item>
-      </BaseHeader.Menu>
-      <BaseHeader.Nav navItems={navItems} activeItem={navItems[0]} onChangeItem={jest.fn()} />
-    </BaseHeader>,
+        </BaseHeader.Menu>
+        <BaseHeader.Nav navItems={navItems} activeItem={navItems[0]} onChangeItem={jest.fn()} />
+      </BaseHeader>
+    </Router>,
   );
 
 describe('BaseHeader', () => {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Dropdown, IconHamburger, Text } from '@gpn-prototypes/vega-ui';
+import { useLocation } from 'react-router-dom';
+import { Button, Dropdown, IconHamburger, Text, useOnChange } from '@gpn-prototypes/vega-ui';
 
 import { cnBaseHeader } from '../cn-base-header';
 
@@ -11,6 +12,7 @@ interface BaseHeaderMenuProps {
   title: string;
   children: React.ReactNode;
   className?: string;
+  dropdownClassName?: string;
 }
 
 const testId = {
@@ -23,7 +25,7 @@ type BaseHeaderMenuType = React.FC<BaseHeaderMenuProps> & {
 };
 
 export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
-  const { title, children, className } = props;
+  const { title, children, className, dropdownClassName } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCloseMenu = (): void => {
@@ -31,6 +33,10 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
       setIsOpen(false);
     }
   };
+
+  const location = useLocation();
+
+  useOnChange(location.pathname, handleCloseMenu);
 
   return (
     <BaseHeaderMenuContext.Provider value={{ closeMenu: handleCloseMenu }}>
@@ -66,7 +72,7 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
           </Dropdown.Trigger>
           <Dropdown.Menu>
             {({ props: menuProps }): React.ReactNode => (
-              <div className={cnBaseHeader('Dropdown')} {...menuProps}>
+              <div className={cnBaseHeader('Dropdown').mix(dropdownClassName)} {...menuProps}>
                 <ul className={cnBaseHeader('Menu')} role="menu">
                   {children}
                 </ul>
@@ -74,7 +80,9 @@ export const BaseHeaderMenu: BaseHeaderMenuType = (props) => {
             )}
           </Dropdown.Menu>
         </Dropdown>
-        <Text className={cnBaseHeader('MenuTriggerText').toString()}>{title}</Text>
+        <Text size="s" className={cnBaseHeader('MenuTriggerText').toString()}>
+          {title}
+        </Text>
       </div>
     </BaseHeaderMenuContext.Provider>
   );
