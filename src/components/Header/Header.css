@@ -16,6 +16,10 @@
     }
   }
 
+  &__Dropdown {
+    margin-left: calc(var(--space-3xs) + var(--space-s));
+  }
+
   &__MenuItem {
     &_disabled {
       display: flex;

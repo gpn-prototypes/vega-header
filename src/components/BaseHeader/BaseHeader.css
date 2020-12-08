@@ -9,7 +9,7 @@
   background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-bg-border);
   grid-template-columns: 298px 2px minmax(200px, 1fr);
-  column-gap: 12px;
+  column-gap: 6px;
 
   &__Delimiter {
     width: 2px;
@@ -36,9 +36,14 @@
     white-space: nowrap;
 
     text-overflow: ellipsis;
+
+    cursor: default;
   }
 
   &__Dropdown {
+    --z-index-header-dropdown: 100;
+    z-index: var(--z-index-header-dropdown);
+
     width: 240px;
 
     background-color: var(--color-bg-default);
@@ -55,7 +60,9 @@
   }
 
   &__MenuItem {
-    padding: 6px 12px;
+    padding: 4px 12px;
+
+    width: 240px;
 
     &:hover {
       background-color: var(--color-bg-stripe);
@@ -67,7 +74,7 @@
   }
 
   &__MenuDelimiter {
-    margin: 17px 12px;
+    margin: 13px 12px;
 
     height: 1px;
 
@@ -80,5 +87,8 @@
 
   &__Nav {
     grid-column: 3;
+
+    /* Фикс из-за табов. ФР: https://s.csssr.ru/UMYJTGU0M/2020-11-10-16-13-03-rq97L.jpg. ОР: https://s.csssr.ru/UMYJTGU0M/2020-11-10-16-14-08-ziO46.jpg */
+    margin-top: 5px;
   }
 }

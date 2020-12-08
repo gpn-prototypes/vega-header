@@ -1,4 +1,6 @@
 import React from 'react';
+import { act } from 'react-dom/test-utils';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { fireEvent, render, RenderResult, screen, waitFor } from '@testing-library/react';
 
 import { BaseHeaderMenu } from './BaseHeaderMenu';
@@ -18,46 +20,50 @@ const renderComponent = (
   props: Omit<BaseHeaderNavTestProps, 'children'> = defaultProps,
 ): RenderResult =>
   render(
-    <BaseHeaderMenu {...props}>
-      {menuItems.map((mi) => (
-        <BaseHeaderMenu.Item key={mi.name}>
-          {(itemProps): React.ReactNode => (
-            <a onClick={itemProps.closeMenu} href={mi.url}>
-              {mi.name}
-            </a>
-          )}
-        </BaseHeaderMenu.Item>
-      ))}
-    </BaseHeaderMenu>,
+    <Router>
+      <BaseHeaderMenu {...props}>
+        {menuItems.map((mi) => (
+          <BaseHeaderMenu.Item key={mi.name}>
+            {(itemProps): React.ReactNode => (
+              <a onClick={itemProps.closeMenu} href={mi.url}>
+                {mi.name}
+              </a>
+            )}
+          </BaseHeaderMenu.Item>
+        ))}
+      </BaseHeaderMenu>
+    </Router>,
   );
 
 const getMenuList = (): HTMLElement => screen.getByRole('menu');
 
-describe('BaseHeader', () => {
+function openDropdown(menu: RenderResult): void {
+  const menuTrigger = menu.queryByTestId('BaseHeader:Menu:Trigger');
+
+  act(() => {
+    if (menuTrigger !== null) {
+      fireEvent.click(menuTrigger);
+    }
+  });
+}
+
+describe('BaseHeaderMenu', () => {
   test('рендерится без ошибок', () => {
     expect(renderComponent).not.toThrow();
   });
 
   test('открывается меню', async () => {
-    const menu = await renderComponent();
-    const menuTrigger = await menu.getByTestId('BaseHeader:Menu:Trigger');
+    const menu = renderComponent();
 
-    expect(menu.container.querySelector('.VegaMenu')).not.toBeTruthy();
-
-    fireEvent.click(menuTrigger);
-
+    openDropdown(menu);
     await waitFor(() => {
       expect(getMenuList()).toBeInTheDocument();
     });
   });
 
   test('закрывается меню при клике вне меню', async () => {
-    const menu = await renderComponent({ ...defaultProps });
-    const menuTrigger = await menu.getByTestId('BaseHeader:Menu:Trigger');
-
-    expect(menu.container.querySelector('.VegaMenu')).not.toBeTruthy();
-
-    fireEvent.click(menuTrigger);
+    const menu = renderComponent({ ...defaultProps });
+    openDropdown(menu);
 
     await waitFor(() => {
       expect(getMenuList()).toBeInTheDocument();
@@ -70,24 +76,23 @@ describe('BaseHeader', () => {
     });
   });
 
-  test('вызывается callback функция', async () => {
-    const menu = await renderComponent();
-    const menuTrigger = await menu.getByTestId('BaseHeader:Menu:Trigger');
+  test('при смене pathname dropdown закрывается', async () => {
+    const menu = renderComponent({ pathname: '/test', title: 'test' });
 
-    expect(menu.container.querySelector('.VegaMenu')).not.toBeTruthy();
-
-    fireEvent.click(menuTrigger);
+    openDropdown(menu);
 
     await waitFor(() => {
       expect(getMenuList()).toBeInTheDocument();
     });
 
-    const menuItem = await screen.getByText('Пункт 2');
-
-    fireEvent.click(menuItem);
+    menu.rerender(
+      <BaseHeaderMenu pathname="/new-test" title="test">
+        <div>test</div>
+      </BaseHeaderMenu>,
+    );
 
     await waitFor(() => {
-      expect(menu.container.querySelector('[role="menu"]')).toBe(null);
+      expect(menu.container.querySelector('.VegaMenu')).not.toBeTruthy();
     });
   });
 });

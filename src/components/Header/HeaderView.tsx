@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Link, matchPath } from 'react-router-dom';
-import { Badge, Loader, Text } from '@gpn-prototypes/vega-ui';
+import { Badge, Text } from '@gpn-prototypes/vega-ui';
 import cn from 'bem-cn';
 
 import { useAppContext } from '../../platform/app-context/AppContext';
@@ -8,10 +8,8 @@ import { BaseHeader } from '../BaseHeader';
 
 import { NavLinkType } from './types';
 
-type HeaderViewProps = {
+export type HeaderViewProps = {
   projectName?: string | null;
-  isProjectPage: boolean | null;
-  isCreateProjectPage: boolean | null;
   isLoading?: boolean;
   onChangeActive: (item: NavLinkType) => void;
   pathname: string;
@@ -20,19 +18,13 @@ type HeaderViewProps = {
 const cnHeader = cn('Header');
 
 export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
-  const {
-    projectName,
-    onChangeActive,
-    isCreateProjectPage,
-    isLoading,
-    isProjectPage,
-    pathname,
-  } = props;
+  const { projectName, onChangeActive, isLoading, pathname } = props;
   const { identity } = useAppContext();
 
   const navItems: NavLinkType[] = [
     { name: 'О проекте', url: '/show/:projectId' },
     { name: 'Ресурсная база', url: '/show/:projectId/rb' },
+    { name: 'Логика проекта', url: '/show/:projectId/lc' },
   ];
 
   const isActiveNavItem = useMemo(() => {
@@ -56,29 +48,37 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     onChangeActive(item);
   };
 
+  const [isCreateProjectPage, isProjectsPage] = ['/create', '/'].map(
+    (path) => matchPath(pathname, { path, exact: true }) !== null,
+  );
+
   const title = (): string | null | undefined => {
     if (isCreateProjectPage) {
       return 'Создание проекта';
     }
 
-    if (isProjectPage) {
+    if (isProjectsPage) {
       return 'Проекты';
     }
 
     return projectName;
   };
 
-  const shouldRenderNavItems = !isCreateProjectPage && !isProjectPage;
+  const shouldRenderNavItems = !isCreateProjectPage && !isProjectsPage;
 
   const menuItemsRender = menuItems.map((item) => {
-    if (isProjectPage && item.url === '/') {
+    if (isProjectsPage && item.url === '/') {
       return null;
     }
 
     return (
       <BaseHeader.Menu.Item key={item.name} disabled={item.disabled}>
         {(menuItemProps): React.ReactNode => {
-          const itemText = <Text view={item.disabled ? 'ghost' : 'primary'}>{item.name}</Text>;
+          const itemText = (
+            <Text size="s" view={item.disabled ? 'ghost' : 'primary'}>
+              {item.name}
+            </Text>
+          );
 
           if (!item.disabled && item.url !== undefined) {
             return (
@@ -107,10 +107,13 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
 
   const menuTitle = title() ?? '';
 
-  const renderMenu = isLoading ? (
-    <Loader />
-  ) : (
-    <BaseHeader.Menu className={cnHeaderMenu} title={menuTitle}>
+  const renderMenu = isLoading ? null : (
+    <BaseHeader.Menu
+      className={cnHeaderMenu}
+      dropdownClassName={cnHeader('Dropdown')}
+      title={menuTitle}
+      pathname={pathname}
+    >
       {menuItemsRender}
       <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
@@ -126,7 +129,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
             className={menuItemProps.className}
             href="/login"
           >
-            <Text>Выйти</Text>
+            <Text size="s">Выйти</Text>
           </a>
         )}
       </BaseHeader.Menu.Item>
