@@ -12264,6 +12264,11 @@ stack-utils@^2.0.2:
   dependencies:
     escape-string-regexp "^2.0.0"
 
+standalone-single-spa-webpack-plugin@^1.0.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/standalone-single-spa-webpack-plugin/-/standalone-single-spa-webpack-plugin-1.2.0.tgz#7001eff19d1b4861f53406e95acb64cc9cf8a80c"
+  integrity sha512-w0BCY5tSUgCr7jStY1DORlcMpa7j0ygTrh5LC4Aq/RJpmIH9+WOzd+g20jrRFUbrGFviYL+qhaBgqRRtep88vQ==
+
 state-toggle@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/state-toggle/-/state-toggle-1.0.3.tgz#e123b16a88e143139b09c6852221bc9815917dfe"
@@ -13644,38 +13649,40 @@ webpack-cli@^3.3.12:
     v8-compile-cache "^2.1.1"
     yargs "^13.3.2"
 
-webpack-config-single-spa-react-ts@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-react-ts/-/webpack-config-single-spa-react-ts-1.12.0.tgz#70cfe2b35cd00ba4c8aa6edd9d5f84244c28f68e"
-  integrity sha512-THObKvnMXHEpEXkZbo7wH5n1QNdBSaFAEr6TQ+weDZNs8n13nui5YtDJ6jFCAeGBbTWXopJbsUYRXVHtGBJkUg==
+webpack-config-single-spa-react-ts@^1.17.6:
+  version "1.17.6"
+  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-react-ts/-/webpack-config-single-spa-react-ts-1.17.6.tgz#c25b2053074c1add1320321853ee9d36df3cd2ce"
+  integrity sha512-3OW6P9fmMQRmMEtaVtCZkvOCKjLtdA8Yh2xji7VFSsw5+k0o5xr5UD9kS49it6mvvFZNk8POaolR4IYS+qO79Q==
   dependencies:
-    webpack-config-single-spa-react "^1.12.0"
-    webpack-config-single-spa-ts "^1.12.0"
+    webpack-config-single-spa-react "^1.17.6"
+    webpack-config-single-spa-ts "^1.17.6"
 
-webpack-config-single-spa-react@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-react/-/webpack-config-single-spa-react-1.12.0.tgz#97ff3613676f8975d89cca29baa02d1922bc12ad"
-  integrity sha512-xQtKTWYIXB8821aBk3r0yT7tjIVTbLRbPfmwQrZ/kFsS1crUX66z21k5QjRAaLMmUHBX9hSkXLjJ+7A/ebNCug==
+webpack-config-single-spa-react@^1.12.0, webpack-config-single-spa-react@^1.17.6:
+  version "1.17.6"
+  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-react/-/webpack-config-single-spa-react-1.17.6.tgz#f7443bf27699fddb3e61c464cf9263a9f4767c23"
+  integrity sha512-K6dPObtSm7ExP40xWeGzzUz1XphQqHgGM10KFLu3A/KdlGtBZ5bNRILCJIutRGRyyRpoe/J2Qp01YCeG+E2nIQ==
   dependencies:
-    webpack-config-single-spa "^1.12.0"
+    webpack-config-single-spa "^1.17.6"
 
-webpack-config-single-spa-ts@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-ts/-/webpack-config-single-spa-ts-1.12.0.tgz#3f4bf40e75c951ff51040c8dbfe32f8b57b4fa71"
-  integrity sha512-P7ByX17TvXfhPItkyOEj8WptJsZpsigqIehqRdw1kIns76AwvDOGYLIcOqms/ddAvcS69jFeEFgqLebjkO6x8g==
+webpack-config-single-spa-ts@^1.12.0, webpack-config-single-spa-ts@^1.17.6:
+  version "1.17.6"
+  resolved "https://registry.yarnpkg.com/webpack-config-single-spa-ts/-/webpack-config-single-spa-ts-1.17.6.tgz#9b38d7f215de9ead9dde022ab165f005f5781861"
+  integrity sha512-QjMnV2xihI3TSZ0s+QikHI3a54AJhdQdcH4aWEvM8aUsZCZgNG/X7nKd1B0iI2jbb27YipcqNphvovfDXJ8aeA==
   dependencies:
     fork-ts-checker-webpack-plugin "^4.1.3"
-    webpack-config-single-spa "^1.12.0"
+    webpack-config-single-spa "^1.17.6"
     webpack-merge "^4.2.2"
 
-webpack-config-single-spa@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/webpack-config-single-spa/-/webpack-config-single-spa-1.12.0.tgz#367f7618be2772bbe3cdde22c3142577c19dcbf6"
-  integrity sha512-BO1nI7LqmHQ/oDYR11AEmFssHjFijt2O1UQO0c4QVr/w9fuVDvPo0Qei7WrfexxrudReQbURk5v/UEGAP306aA==
+webpack-config-single-spa@^1.17.6:
+  version "1.17.6"
+  resolved "https://registry.yarnpkg.com/webpack-config-single-spa/-/webpack-config-single-spa-1.17.6.tgz#48ea056e2bd4286d3a48cd6421c8e55936006666"
+  integrity sha512-+CnnSH6QnSxxBb311hCwfEeLb8j4Dx4TI/+VJ7cbaPXX+9hKFg2FTj4CNeGicbFRNSYy7u9fVeQf26/3dztK3w==
   dependencies:
     babel-loader "^8.1.0"
     clean-webpack-plugin "^3.0.0"
     css-loader "^3.5.3"
+    html-webpack-plugin "^4.5.0"
+    standalone-single-spa-webpack-plugin "^1.0.1"
     style-loader "^1.2.1"
     unused-files-webpack-plugin "^3.4.0"
     webpack-bundle-analyzer "^3.6.0"
