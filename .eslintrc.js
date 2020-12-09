@@ -9,8 +9,8 @@ module.exports = {
     },
   ],
   rules: {
-    '@typescript-eslint/no-empty-function': 'off',
     'no-underscore-dangle': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-redeclare': 'off',

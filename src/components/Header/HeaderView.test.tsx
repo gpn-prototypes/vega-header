@@ -5,7 +5,7 @@ import { HeaderView, HeaderViewProps } from './HeaderView';
 
 const defaultProps: HeaderViewProps = {
   onChangeActive: jest.fn(),
-  pathname: '/',
+  pathname: '/projects',
 };
 
 const renderComponent = (props: Partial<HeaderViewProps> = {}): RenderResult => {
@@ -36,7 +36,7 @@ describe('HeaderView', () => {
     });
 
     test('на странице /projects/create в заголовке отображается "Создание проекта"', () => {
-      renderComponent({ pathname: '/create' });
+      renderComponent({ pathname: '/projects/create' });
 
       const trigger = findTrigger();
 
@@ -44,7 +44,7 @@ describe('HeaderView', () => {
     });
 
     test('при передаче projectName на странице редактирования проекта в заголовке отображается projectName', () => {
-      renderComponent({ pathname: '/show/:projectId', projectName: 'test-name' });
+      renderComponent({ pathname: '/projects/show/:projectId', projectName: 'test-name' });
 
       const trigger = findTrigger();
 
@@ -54,7 +54,7 @@ describe('HeaderView', () => {
 
   describe('Tabs', () => {
     test('табы отображаются на странице редактирования проекта', () => {
-      renderComponent({ pathname: '/show/:projectId', projectName: 'test-name' });
+      renderComponent({ pathname: '/projects/show/:projectId', projectName: 'test-name' });
 
       expect(findTabs()).toBeInTheDocument();
     });
@@ -62,7 +62,11 @@ describe('HeaderView', () => {
     test('при нажатии на таб вызывается onChangeActive', () => {
       const onChangeActive = jest.fn();
 
-      renderComponent({ pathname: '/show/projectId', projectName: 'test-name', onChangeActive });
+      renderComponent({
+        pathname: '/projects/show/projectId',
+        projectName: 'test-name',
+        onChangeActive,
+      });
 
       const tabsList = screen.queryAllByRole('tab');
 
@@ -72,7 +76,7 @@ describe('HeaderView', () => {
     });
 
     test('выставляется активный таб', () => {
-      renderComponent({ pathname: '/show/:projectId/rb' });
+      renderComponent({ pathname: '/projects/show/:projectId/rb' });
 
       const tabsList = screen.queryAllByRole('tab');
 

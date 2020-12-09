@@ -22,9 +22,9 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const { identity } = useAppContext();
 
   const navItems: NavLinkType[] = [
-    { name: 'О проекте', url: '/show/:projectId' },
-    { name: 'Ресурсная база', url: '/show/:projectId/rb' },
-    { name: 'Логика проекта', url: '/show/:projectId/lc' },
+    { name: 'О проекте', url: '/projects/show/:projectId' },
+    { name: 'Ресурсная база', url: '/projects/show/:projectId/rb' },
+    { name: 'Логика проекта', url: '/projects/show/:projectId/lc' },
   ];
 
   const isActiveNavItem = useMemo(() => {
@@ -39,7 +39,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   }, [pathname, navItems]);
 
   const menuItems = [
-    { name: 'Проекты', url: '/' },
+    { name: 'Проекты', url: '/projects' },
     { name: 'Обучение', disabled: true },
     { name: 'Помощь', disabled: true },
   ];
@@ -48,7 +48,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     onChangeActive(item);
   };
 
-  const [isCreateProjectPage, isProjectsPage] = ['/create', '/'].map(
+  const [isCreateProjectPage, isProjectsPage] = ['/projects/create', '/projects'].map(
     (path) => matchPath(pathname, { path, exact: true }) !== null,
   );
 
@@ -67,7 +67,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const shouldRenderNavItems = !isCreateProjectPage && !isProjectsPage;
 
   const menuItemsRender = menuItems.map((item) => {
-    if (isProjectsPage && item.url === '/') {
+    if (isProjectsPage && item.url === '/projects') {
       return null;
     }
 
