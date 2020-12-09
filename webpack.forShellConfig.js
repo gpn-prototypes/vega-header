@@ -65,8 +65,8 @@ module.exports = (webpackConfigEnv) => {
     },
     plugins: [
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
         'process.env.YC_DEPLOYMENT': JSON.stringify(YC_DEPLOYMENT),
+        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
         'process.env.BASE_API_URL': JSON.stringify(process.env.BASE_API_URL),
         'process.env.BASE_URL': JSON.stringify(BASE_URL),
         ...envKeys,
