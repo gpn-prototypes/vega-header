@@ -1,15 +1,15 @@
 import React, { ReactElement } from 'react';
 import { Route, Router } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, NormalizedCacheObject } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
+import { GraphQLClient, Identity } from '@gpn-prototypes/vega-sdk';
 import { Root as VegaRoot } from '@gpn-prototypes/vega-ui';
 import { History } from 'history';
 
 import { Header } from '../components/Header';
 import { AppProvider } from '../platform/app-context/AppProvider';
-import { Identity } from '../platform/app-context/type';
 
 type AppProps = {
-  graphqlClient: ApolloClient<NormalizedCacheObject>;
+  graphqlClient: GraphQLClient;
   identity: Identity;
   history: History;
 };
