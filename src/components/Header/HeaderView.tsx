@@ -1,11 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, matchPath } from 'react-router-dom';
-import { Badge, Text } from '@gpn-prototypes/vega-ui';
+import { Badge, Text, useMount } from '@gpn-prototypes/vega-ui';
 import cn from 'bem-cn';
 
 import { useAppContext } from '../../platform/app-context/AppContext';
 import { BaseHeader } from '../BaseHeader';
 
+import defaultAvatar from './default-avatar.svg';
 import { NavLinkType } from './types';
 
 export type HeaderViewProps = {
@@ -17,9 +18,41 @@ export type HeaderViewProps = {
 
 const cnHeader = cn('Header');
 
+const LS_USER_FIRST_NAME_KEY = 'user-first-name';
+const LS_USER_LAST_NAME_KEY = 'user-last-name';
+
 export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const { projectName, onChangeActive, isLoading, pathname } = props;
   const { identity } = useAppContext();
+
+  const [userName, setUserName] = useState<string | null>(null);
+
+  useMount(() => {
+    const userFirstName = localStorage.getItem(LS_USER_FIRST_NAME_KEY);
+    const userLastName = localStorage.getItem(LS_USER_LAST_NAME_KEY);
+
+    if (userFirstName && userLastName) {
+      setUserName(`${userFirstName} ${userLastName}`);
+    }
+  });
+
+  const renderAvatar = () => {
+    if (userName) {
+      return (
+        <>
+          <div className={cnHeader('Avatar')}>
+            <img src={defaultAvatar} alt="avatar" className={cnHeader('Avatar-img')} />
+            <Text size="xs" className={cnHeader('Avatar-name').toString()}>
+              {userName}
+            </Text>
+          </div>
+          <BaseHeader.Menu.Delimiter />
+        </>
+      );
+    }
+
+    return null;
+  };
 
   const navItems: NavLinkType[] = [
     { name: 'О проекте', url: '/projects/show/:projectId' },
@@ -114,6 +147,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
       title={menuTitle}
       pathname={pathname}
     >
+      {renderAvatar()}
       {menuItemsRender}
       <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
