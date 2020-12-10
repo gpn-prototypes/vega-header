@@ -20,6 +20,10 @@
     margin-left: calc(var(--space-3xs) + var(--space-s));
   }
 
+  &__MenuItems .VegaBaseHeader__MenuItem:not(:last-child) {
+    margin-bottom: var(--space-l);
+  }
+
   &__MenuItem {
     &_disabled {
       display: flex;
@@ -39,6 +43,9 @@
 
     &-img {
       margin-right: var(--space-xs);
+
+      width: 40px;
+      height: 40px;
     }
 
     &-name {

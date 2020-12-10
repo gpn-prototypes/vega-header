@@ -148,7 +148,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
       pathname={pathname}
     >
       {renderAvatar()}
-      {menuItemsRender}
+      <div className={cnHeader('MenuItems')}>{menuItemsRender}</div>
       <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
         {(menuItemProps): React.ReactNode => (
