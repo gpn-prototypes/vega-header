@@ -27,4 +27,24 @@
       align-items: center;
     }
   }
+
+  &__Avatar {
+    padding-right: var(--space-s);
+    padding-left: var(--space-s);
+    padding-bottom: var(--space-2xs);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-img {
+      margin-right: var(--space-xs);
+    }
+
+    &-name {
+      min-width: 0;
+
+      word-wrap: break-word;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 {
   "extends": "@gpn-prototypes/frontend-configs/tsconfig",
   "shouldExtractLiteralValuesFromEnum": true,
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "custom.d.ts"],
   "exclude": ["node_modules", "**/dist/**/*"],
   "compilerOptions": {
     "baseUrl": "./",
