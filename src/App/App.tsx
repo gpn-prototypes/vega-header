@@ -27,6 +27,8 @@ export const App = (props: AppProps): ReactElement => {
               '/projects/show/:projectId/rb',
               '/projects',
               '/projects/create',
+              '/projects/show/:projectId/lc',
+              '/projects/show/:projectId/fem',
             ]}
           >
             <VegaRoot defaultTheme="dark">

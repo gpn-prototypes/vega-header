@@ -58,6 +58,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     { name: 'О проекте', url: '/projects/show/:projectId' },
     { name: 'Ресурсная база', url: '/projects/show/:projectId/rb' },
     { name: 'Логика проекта', url: '/projects/show/:projectId/lc' },
+    { name: 'Экономика проекта', url: '/projects/show/:projectId/fem' },
   ];
 
   const isActiveNavItem = useMemo(() => {
