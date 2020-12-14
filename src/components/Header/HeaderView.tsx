@@ -58,17 +58,22 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     { name: 'О проекте', url: '/projects/show/:projectId' },
     { name: 'Ресурсная база', url: '/projects/show/:projectId/rb' },
     { name: 'Логика проекта', url: '/projects/show/:projectId/lc' },
-    { name: 'Экономика проекта', url: '/projects/show/:projectId/fem' },
+    {
+      name: 'Экономика проекта',
+      url: '/projects/show/:projectId/fem',
+      routes: ['/projects/show/:projectId/fem/OPEX', '/projects/show/:projectId/fem/CAPEX'],
+    },
   ];
 
   const isActiveNavItem = useMemo(() => {
     return navItems.find((item) => {
-      const match = matchPath(pathname, {
-        path: item.url,
-        exact: true,
-      });
+      const match = (url?: string) =>
+        matchPath(pathname, {
+          path: url,
+          exact: true,
+        });
 
-      return match !== null;
+      return match(item.url) !== null || item.routes?.some((route) => match(route) !== null);
     });
   }, [pathname, navItems]);
 
