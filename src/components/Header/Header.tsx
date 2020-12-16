@@ -15,7 +15,7 @@ export const Header = (): React.ReactElement => {
   const params = useParams<Params>();
 
   const { data, loading } = useGetProjectName({
-    skip: params.projectId === undefined,
+    skip: params.projectId === undefined || params.projectId.length === 0,
     variables: { vid: params.projectId },
   });
 
