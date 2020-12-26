@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 
+import { createBrowserHistory } from 'history';
+
 import { App } from './App';
 
 const authToken = localStorage.getItem('auth-token');
@@ -29,6 +31,6 @@ const identity = {
 };
 
 ReactDOM.render(
-  <App graphqlClient={client} identity={identity} />,
+  <App history={createBrowserHistory()} graphqlClient={client} identity={identity} />,
   document.getElementById('root'),
 );

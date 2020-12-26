@@ -1,11 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, matchPath } from 'react-router-dom';
-import { Badge, Text } from '@gpn-prototypes/vega-ui';
+import { Badge, Text, useMount } from '@gpn-prototypes/vega-ui';
 import cn from 'bem-cn';
 
 import { useAppContext } from '../../platform/app-context/AppContext';
 import { BaseHeader } from '../BaseHeader';
 
+import defaultAvatar from './default-avatar.svg';
 import { NavLinkType } from './types';
 
 export type HeaderViewProps = {
@@ -17,29 +18,67 @@ export type HeaderViewProps = {
 
 const cnHeader = cn('Header');
 
+const LS_USER_FIRST_NAME_KEY = 'user-first-name';
+const LS_USER_LAST_NAME_KEY = 'user-last-name';
+
 export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const { projectName, onChangeActive, isLoading, pathname } = props;
   const { identity } = useAppContext();
 
+  const [userName, setUserName] = useState<string | null>(null);
+
+  useMount(() => {
+    const userFirstName = localStorage.getItem(LS_USER_FIRST_NAME_KEY);
+    const userLastName = localStorage.getItem(LS_USER_LAST_NAME_KEY);
+
+    if (userFirstName && userLastName) {
+      setUserName(`${userFirstName} ${userLastName}`);
+    }
+  });
+
+  const renderAvatar = () => {
+    if (userName) {
+      return (
+        <>
+          <div className={cnHeader('Avatar')}>
+            <img src={defaultAvatar} alt="avatar" className={cnHeader('Avatar-img')} />
+            <Text size="xs" className={cnHeader('Avatar-name').toString()}>
+              {userName}
+            </Text>
+          </div>
+          <BaseHeader.Menu.Delimiter />
+        </>
+      );
+    }
+
+    return null;
+  };
+
   const navItems: NavLinkType[] = [
-    { name: 'О проекте', url: '/show/:projectId' },
-    { name: 'Ресурсная база', url: '/show/:projectId/rb' },
-    { name: 'Логика проекта', url: '/show/:projectId/lc' },
+    { name: 'О проекте', url: '/projects/show/:projectId' },
+    { name: 'Ресурсная база', url: '/projects/show/:projectId/rb' },
+    { name: 'Логика проекта', url: '/projects/show/:projectId/lc' },
+    {
+      name: 'Экономика проекта',
+      url: '/projects/show/:projectId/fem',
+      routes: ['/projects/show/:projectId/fem/OPEX', '/projects/show/:projectId/fem/CAPEX'],
+    },
   ];
 
   const isActiveNavItem = useMemo(() => {
     return navItems.find((item) => {
-      const match = matchPath(pathname, {
-        path: item.url,
-        exact: true,
-      });
+      const match = (url?: string) =>
+        matchPath(pathname, {
+          path: url,
+          exact: true,
+        });
 
-      return match !== null;
+      return match(item.url) !== null || item.routes?.some((route) => match(route) !== null);
     });
   }, [pathname, navItems]);
 
   const menuItems = [
-    { name: 'Проекты', url: '/' },
+    { name: 'Проекты', url: '/projects' },
     { name: 'Обучение', disabled: true },
     { name: 'Помощь', disabled: true },
   ];
@@ -48,7 +87,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
     onChangeActive(item);
   };
 
-  const [isCreateProjectPage, isProjectsPage] = ['/create', '/'].map(
+  const [isCreateProjectPage, isProjectsPage] = ['/projects/create', '/projects'].map(
     (path) => matchPath(pathname, { path, exact: true }) !== null,
   );
 
@@ -67,7 +106,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const shouldRenderNavItems = !isCreateProjectPage && !isProjectsPage;
 
   const menuItemsRender = menuItems.map((item) => {
-    if (isProjectsPage && item.url === '/') {
+    if (isProjectsPage && item.url === '/projects') {
       return null;
     }
 
@@ -114,7 +153,8 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
       title={menuTitle}
       pathname={pathname}
     >
-      {menuItemsRender}
+      {renderAvatar()}
+      <div className={cnHeader('MenuItems')}>{menuItemsRender}</div>
       <BaseHeader.Menu.Delimiter />
       <BaseHeader.Menu.Item>
         {(menuItemProps): React.ReactNode => (
