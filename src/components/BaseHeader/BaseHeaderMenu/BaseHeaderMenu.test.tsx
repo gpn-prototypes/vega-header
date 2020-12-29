@@ -8,8 +8,8 @@ import { BaseHeaderMenu } from './BaseHeaderMenu';
 type BaseHeaderNavTestProps = React.ComponentProps<typeof BaseHeaderMenu>;
 
 const menuItems = [
-  { name: 'Пункт 1', url: 'url1' },
-  { name: 'Пункт 2', url: 'url2', onClick: jest.fn() },
+  { name: 'Пункт 1', url: 'url1', testId: 'item 1' },
+  { name: 'Пункт 2', url: 'url2', onClick: jest.fn(), testId: 'item 2' },
 ];
 
 const defaultProps = {
@@ -38,7 +38,7 @@ const renderComponent = (
 const getMenuList = (): HTMLElement => screen.getByRole('menu');
 
 function openDropdown(menu: RenderResult): void {
-  const menuTrigger = menu.queryByTestId('BaseHeader:Menu:Trigger');
+  const menuTrigger = menu.queryByTestId(BaseHeaderMenu.testId.trigger);
 
   act(() => {
     if (menuTrigger !== null) {

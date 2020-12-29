@@ -13,12 +13,15 @@ describe('BaseHeader', () => {
     {
       name: 'Пайплайн',
       isActive: true,
+      testId: 'main',
     },
     {
       name: 'Ресурсная база',
+      testId: 'rb',
     },
     {
       name: 'Геологические риски',
+      testId: 'gr',
     },
   ];
 

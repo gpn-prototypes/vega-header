@@ -20,6 +20,16 @@ const cnHeader = cn('Header');
 
 const LS_USER_FIRST_NAME_KEY = 'user-first-name';
 const LS_USER_LAST_NAME_KEY = 'user-last-name';
+const testId = {
+  logout: 'Header:button:logout',
+  menuItemProject: 'Header:link:project',
+  menuItemTraining: 'Header:link:training',
+  menuItemHelp: 'Header:link:help',
+  about: 'Header:nav:about',
+  rb: 'Header:nav:rb',
+  lc: 'Header:nav:lc',
+  fem: 'Header:nav:fem',
+};
 
 export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   const { projectName, onChangeActive, isLoading, pathname } = props;
@@ -55,13 +65,14 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   };
 
   const navItems: NavLinkType[] = [
-    { name: 'О проекте', url: '/projects/show/:projectId' },
-    { name: 'Ресурсная база', url: '/projects/show/:projectId/rb' },
-    { name: 'Логика проекта', url: '/projects/show/:projectId/lc' },
+    { name: 'О проекте', url: '/projects/show/:projectId', testId: testId.about },
+    { name: 'Ресурсная база', url: '/projects/show/:projectId/rb', testId: testId.rb },
+    { name: 'Логика проекта', url: '/projects/show/:projectId/lc', testId: testId.lc },
     {
       name: 'Экономика проекта',
       url: '/projects/show/:projectId/fem',
       routes: ['/projects/show/:projectId/fem/OPEX', '/projects/show/:projectId/fem/CAPEX'],
+      testId: testId.fem,
     },
   ];
 
@@ -78,9 +89,9 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
   }, [pathname, navItems]);
 
   const menuItems = [
-    { name: 'Проекты', url: '/projects' },
-    { name: 'Обучение', disabled: true },
-    { name: 'Помощь', disabled: true },
+    { name: 'Проекты', url: '/projects', testId: testId.menuItemProject },
+    { name: 'Обучение', disabled: true, testId: testId.menuItemTraining },
+    { name: 'Помощь', disabled: true, testId: testId.menuItemHelp },
   ];
 
   const handleChangeActive = (item: NavLinkType): void => {
@@ -125,6 +136,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
                 onClick={menuItemProps.closeMenu}
                 className={menuItemProps.className}
                 to={item.url}
+                data-testid={item.testId}
               >
                 {itemText}
               </Link>
@@ -132,7 +144,10 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
           }
 
           return (
-            <div className={cnHeader('MenuItem', { disabled: true }).mix(menuItemProps.className)}>
+            <div
+              className={cnHeader('MenuItem', { disabled: true }).mix(menuItemProps.className)}
+              data-testid={item.testId}
+            >
               {itemText}
               <Badge label="Скоро" view="filled" status="system" size="s" form="round" />
             </div>
@@ -168,6 +183,7 @@ export const HeaderView = (props: HeaderViewProps): React.ReactElement => {
             }}
             className={menuItemProps.className}
             href="/login"
+            data-testid={testId.logout}
           >
             <Text size="s">Выйти</Text>
           </a>

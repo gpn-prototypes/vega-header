@@ -11,16 +11,26 @@ type BaseHeaderProps = {
   children: React.ReactNode;
 };
 
+const testId = {
+  wrapper: 'Header',
+};
+
 type BaseHeaderType = React.FC<BaseHeaderProps> & {
   Menu: typeof BaseHeaderMenu;
   Nav: typeof BaseHeaderNav;
+  testId: Record<string, string>;
 };
 
 export const BaseHeader: BaseHeaderType = ({ className, children }) => {
   const cn = cnBaseHeader.mix(className);
 
-  return <header className={cn}>{children}</header>;
+  return (
+    <header className={cn} data-testid={testId.wrapper}>
+      {children}
+    </header>
+  );
 };
 
 BaseHeader.Menu = BaseHeaderMenu;
 BaseHeader.Nav = BaseHeaderNav;
+BaseHeader.testId = testId;
