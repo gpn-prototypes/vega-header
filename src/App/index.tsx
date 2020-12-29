@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
-
 import { createBrowserHistory } from 'history';
 
 import { App } from './App';
