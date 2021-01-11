@@ -1650,19 +1650,6 @@
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
-"@consta/uikit@^1.10.8":
-  version "1.10.8"
-  resolved "https://registry.yarnpkg.com/@consta/uikit/-/uikit-1.10.8.tgz#6fe4a2960fe7a67585dcba1c3947b91e6890cd1a"
-  integrity sha512-i8cGy//EyaIGgm3NK79s1/IVFLyawvdnWmXDBN56WmFwfpBe1zriDb3zJyS7FGqw3B1euJQxrzzyNGFiGiOb6A==
-  dependencies:
-    "@bem-react/classname" "^1.5.8"
-    "@bem-react/classnames" "^1.3.9"
-    bem-cn "^3.0.1"
-    compute-scroll-into-view "^1.0.14"
-    react-textarea-autosize "^7.1.2"
-    react-transition-group "^4.4.1"
-    tslib "^1.13.0"
-
 "@consta/uikit@^1.10.9":
   version "1.10.11"
   resolved "https://registry.yarnpkg.com/@consta/uikit/-/uikit-1.10.11.tgz#75ac382cc28c4a5dfa412515d6ffc04ea7c88b10"
