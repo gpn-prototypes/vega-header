@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.2.5",
-    "@consta/uikit": "^1.10.8",
     "@gpn-prototypes/vega-ui": "^2.15.16",
     "bem-cn": "^3.0.1",
     "graphql": "^15.4.0",
@@ -48,7 +47,7 @@
   },
   "devDependencies": {
     "@gpn-prototypes/frontend-configs": "^1.2.12",
-    "@graphql-codegen/cli": "1.17.10",
+    "@graphql-codegen/cli": "1.20.0",
     "@graphql-codegen/introspection": "1.18.0",
     "@graphql-codegen/near-operation-file-preset": "1.13.3",
     "@graphql-codegen/typescript": "1.17.10",
@@ -82,7 +81,7 @@
     "webpack-cli": "^3.3.12",
     "webpack-config-single-spa-react": "^1.12.0",
     "webpack-config-single-spa-react-ts": "^1.12.0",
-    "webpack-config-single-spa-ts": "^1.12.0",
+    "webpack-config-single-spa-ts": "^1.18.3",
     "webpack-dev-server": "^3.11.0",
     "webpack-import-map-plugin": "^1.0.0-alpha0",
     "webpack-merge": "^4.2.2"
