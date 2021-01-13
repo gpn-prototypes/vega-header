@@ -1,8 +1,11 @@
 import React from 'react';
-import { cnTabsTab, Tabs } from '@consta/uikit/Tabs';
+import { Tabs } from '@gpn-prototypes/vega-ui';
+import cn from 'bem-cn';
 
 import { cnBaseHeader } from '../cn-base-header';
 import { NavItemType } from '../types';
+
+export const cnTabsTab = cn('TabsTab');
 
 type BaseHeaderNavProps = {
   navItems: NavItemType[];
@@ -43,7 +46,9 @@ export const BaseHeaderNav: BaseHeaderNavType = (props) => {
             ref={ref}
             type="button"
             onClick={onChange}
-            className={cnTabsTab({ checked: item.name === activeItem?.name }, [className])}
+            className={cnTabsTab({ checked: item.name === activeItem?.name })
+              .mix(className)
+              .toString()}
             data-testid={item.testId}
           >
             {label}

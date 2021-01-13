@@ -88,7 +88,27 @@
   &__Nav {
     grid-column: 3;
 
-    /* Фикс из-за табов. ФР: https://s.csssr.ru/UMYJTGU0M/2020-11-10-16-13-03-rq97L.jpg. ОР: https://s.csssr.ru/UMYJTGU0M/2020-11-10-16-14-08-ziO46.jpg */
-    margin-top: 5px;
+    .VegaTabs__ScrollRight,
+    .VegaTabs__ScrollLeft {
+      height: calc(var(--BaseHeader-height) - 1px);
+    }
+
+    .VegaTabs__ScrollLeft {
+      background-image: linear-gradient(
+        to left,
+        transparent 0,
+        var(--color-bg-secondary) 24px,
+        var(--color-bg-secondary) 100%
+      );
+    }
+
+    .VegaTabs__ScrollRight {
+      background-image: linear-gradient(
+        to right,
+        transparent 0,
+        var(--color-bg-secondary) 24px,
+        var(--color-bg-secondary) 100%
+      );
+    }
   }
 }
