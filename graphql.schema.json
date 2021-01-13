@@ -755,45 +755,6 @@
             "deprecationReason": null
           },
           {
-            "name": "jtiBlackListEntryList",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "JtiBlackListEntry",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "jtiBlackListEntry",
-            "description": null,
-            "args": [
-              {
-                "name": "vid",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "UUID",
-                  "ofType": null
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "JtiBlackListEntry",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "domainEntityList",
             "description": null,
             "args": [],
@@ -878,26 +839,6 @@
                   "ofType": null
                 },
                 "defaultValue": "false"
-              },
-              {
-                "name": "pageNumber",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": "1"
-              },
-              {
-                "name": "pageSize",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": "20"
               }
             ],
             "type": {
@@ -982,18 +923,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1115,18 +1044,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "name",
             "description": null,
             "args": [],
@@ -1212,18 +1129,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1325,18 +1230,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "name",
             "description": null,
             "args": [],
@@ -1402,18 +1295,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1515,18 +1396,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "name",
             "description": null,
             "args": [],
@@ -1592,18 +1461,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1705,18 +1562,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "name",
             "description": null,
             "args": [],
@@ -1794,18 +1639,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1923,18 +1756,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "name",
             "description": null,
             "args": [],
@@ -1988,18 +1809,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2135,18 +1944,6 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "required",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -2217,18 +2014,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2377,6 +2162,18 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "tokenJti",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -2408,18 +2205,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2533,18 +2318,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": null,
             "args": [],
@@ -2610,18 +2383,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2711,18 +2472,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": null,
             "args": [],
@@ -2806,18 +2555,6 @@
             "deprecationReason": null
           },
           {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": null,
             "args": [],
@@ -2883,18 +2620,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2982,18 +2707,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -3113,18 +2826,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -3252,113 +2953,6 @@
           },
           {
             "name": "size",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "JtiBlackListEntry",
-        "description": null,
-        "fields": [
-          {
-            "name": "vid",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "ID",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "code",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "createdAt",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "DateTime",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "editedAt",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "DateTime",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "jti",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "exp",
             "description": null,
             "args": [],
             "type": {
@@ -3589,18 +3183,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isDeleted",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -4406,12 +3988,6 @@
             "description": "Отсутствует год начала планирования проекта",
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "INVALID_PAGE_NUMBER",
-            "description": "Неверный номер страницы",
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "possibleTypes": null
@@ -4467,18 +4043,6 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "itemsTotal",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -4516,11 +4080,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -4544,6 +4138,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -4562,13 +4166,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -4606,11 +4206,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -4639,13 +4269,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -4673,6 +4299,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -4684,6 +4320,16 @@
               },
               {
                 "name": "parent",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -4709,13 +4355,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -4743,6 +4385,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -4766,13 +4418,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -4810,11 +4458,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -4838,6 +4516,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -4856,13 +4544,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -4900,11 +4584,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -4933,13 +4647,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -4967,6 +4677,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -4978,6 +4698,16 @@
               },
               {
                 "name": "parent",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -5003,13 +4733,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5037,6 +4763,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -5060,13 +4796,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5104,11 +4836,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -5132,6 +4894,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -5150,13 +4922,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5194,11 +4962,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -5227,13 +5025,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5261,6 +5055,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -5272,6 +5076,16 @@
               },
               {
                 "name": "parent",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -5297,13 +5111,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5331,6 +5141,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -5354,13 +5174,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5398,11 +5214,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -5426,6 +5272,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -5444,13 +5300,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5488,11 +5340,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -5521,13 +5403,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5555,6 +5433,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -5566,6 +5454,16 @@
               },
               {
                 "name": "parent",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -5591,13 +5489,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5625,6 +5519,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -5648,13 +5552,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5706,6 +5606,16 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
@@ -5716,11 +5626,31 @@
                 "defaultValue": null
               },
               {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "entity",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -5744,6 +5674,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -5762,13 +5702,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5820,6 +5756,16 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "description",
                 "description": null,
                 "type": {
@@ -5830,11 +5776,31 @@
                 "defaultValue": null
               },
               {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "entity",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -5863,13 +5829,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5897,6 +5859,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -5908,6 +5880,16 @@
               },
               {
                 "name": "parent",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -5933,13 +5915,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -5967,6 +5945,16 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -5990,13 +5978,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6034,6 +6018,26 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "favoriteProjects",
                 "description": null,
                 "type": {
@@ -6041,7 +6045,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "ID",
+                    "name": "UUID",
                     "ofType": null
                   }
                 },
@@ -6068,6 +6072,16 @@
                     "name": "UUID",
                     "ofType": null
                   }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
                 },
                 "defaultValue": null
               },
@@ -6134,6 +6148,26 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "tokenJti",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -6152,13 +6186,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6196,6 +6226,26 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "favoriteProjects",
                 "description": null,
                 "type": {
@@ -6203,7 +6253,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "ID",
+                    "name": "UUID",
                     "ofType": null
                   }
                 },
@@ -6230,6 +6280,16 @@
                     "name": "UUID",
                     "ofType": null
                   }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
                 },
                 "defaultValue": null
               },
@@ -6298,16 +6358,22 @@
                 "defaultValue": null
               },
               {
+                "name": "tokenJti",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6335,6 +6401,16 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "defaultAttachmentType",
                 "description": null,
                 "type": {
@@ -6345,11 +6421,41 @@
                 "defaultValue": null
               },
               {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6371,13 +6477,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6405,11 +6507,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "defaultAttachmentType",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6428,13 +6560,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6462,11 +6590,51 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6488,13 +6656,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6522,6 +6686,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -6535,13 +6729,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6569,6 +6759,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -6583,7 +6803,17 @@
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
-                  "name": "ID",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6605,13 +6835,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6639,6 +6865,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -6653,7 +6909,7 @@
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
-                  "name": "ID",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6662,13 +6918,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6696,11 +6948,51 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -6722,13 +7014,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6756,6 +7044,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -6769,13 +7087,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6813,6 +7127,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -6841,6 +7185,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -6859,13 +7213,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6903,6 +7253,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -6936,13 +7316,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -6984,11 +7360,51 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7010,13 +7426,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -7058,6 +7470,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -7071,13 +7513,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -7115,6 +7553,26 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "fullName",
                 "description": null,
                 "type": {
@@ -7125,11 +7583,31 @@
                 "defaultValue": null
               },
               {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7151,13 +7629,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -7195,11 +7669,41 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "fullName",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7218,13 +7722,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -7282,6 +7782,56 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "createdBy",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedBy",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -7296,7 +7846,17 @@
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
-                  "name": "ID",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "size",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7307,6 +7867,16 @@
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7328,13 +7898,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -7392,6 +7958,56 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "createdBy",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedBy",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -7406,7 +8022,17 @@
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
-                  "name": "ID",
+                  "name": "UUID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "size",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7425,13 +8051,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -7439,153 +8061,6 @@
             "type": {
               "kind": "OBJECT",
               "name": "UpdateAttachment",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "createJtiBlackListEntry",
-            "description": null,
-            "args": [
-              {
-                "name": "code",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "exp",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "jti",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "name",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "CreateJtiBlackListEntry",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "deleteJtiBlackListEntry",
-            "description": null,
-            "args": [
-              {
-                "name": "vid",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "DeleteJtiBlackListEntry",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "updateJtiBlackListEntry",
-            "description": null,
-            "args": [
-              {
-                "name": "code",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "exp",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "jti",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "name",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "vid",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "UpdateJtiBlackListEntry",
               "ofType": null
             },
             "isDeprecated": false,
@@ -7606,11 +8081,51 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "vid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "UUID",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -7632,13 +8147,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -7666,6 +8177,36 @@
                 "defaultValue": null
               },
               {
+                "name": "createdAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "editedAt",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "isDeleted",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "name",
                 "description": null,
                 "type": {
@@ -7679,13 +8220,9 @@
                 "name": "vid",
                 "description": null,
                 "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  }
+                  "kind": "SCALAR",
+                  "name": "UUID",
+                  "ofType": null
                 },
                 "defaultValue": null
               }
@@ -9468,75 +10005,6 @@
       },
       {
         "kind": "OBJECT",
-        "name": "CreateJtiBlackListEntry",
-        "description": null,
-        "fields": [
-          {
-            "name": "result",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "JtiBlackListEntry",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "DeleteJtiBlackListEntry",
-        "description": null,
-        "fields": [
-          {
-            "name": "result",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "UpdateJtiBlackListEntry",
-        "description": null,
-        "fields": [
-          {
-            "name": "result",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "JtiBlackListEntry",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
         "name": "CreateDomainEntity",
         "description": null,
         "fields": [
@@ -9711,7 +10179,7 @@
               "name": "Int",
               "ofType": null
             },
-            "defaultValue": "2022"
+            "defaultValue": "2021"
           },
           {
             "name": "years",
