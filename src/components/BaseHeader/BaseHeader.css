@@ -93,6 +93,15 @@
       height: calc(var(--BaseHeader-height) - 1px);
     }
 
+    .TabsTab {
+      /* Фикс для того, чтобы полоска активного таба находилась прям над бордером */
+      margin-top: 1px;
+    }
+
+    .VegaTabs__ScrollButton {
+      padding: var(--space-xs);
+    }
+
     .VegaTabs__ScrollLeft {
       background-image: linear-gradient(
         to left,
