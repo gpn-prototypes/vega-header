@@ -1,3 +1,4 @@
+# DEPRECATED перенесено в https://github.com/gpn-prototypes/vega-shell
 # vega-header
 
 Шапка для приложений vega
